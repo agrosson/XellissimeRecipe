@@ -14,6 +14,7 @@
 		C1383883229BFFA00018C625 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C1383882229BFFA00018C625 /* Assets.xcassets */; };
 		C1383886229BFFA00018C625 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C1383884229BFFA00018C625 /* LaunchScreen.storyboard */; };
 		C1383891229BFFA00018C625 /* XellissimeRecipeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1383890229BFFA00018C625 /* XellissimeRecipeTests.swift */; };
+		C138389C229C016F0018C625 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = C138389B229C016F0018C625 /* Settings.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +39,7 @@
 		C138388C229BFFA00018C625 /* XellissimeRecipeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = XellissimeRecipeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C1383890229BFFA00018C625 /* XellissimeRecipeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XellissimeRecipeTests.swift; sourceTree = "<group>"; };
 		C1383892229BFFA00018C625 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C138389B229C016F0018C625 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +81,7 @@
 		C1383877229BFF9F0018C625 /* XellissimeRecipe */ = {
 			isa = PBXGroup;
 			children = (
+				C138389B229C016F0018C625 /* Settings.swift */,
 				C1383878229BFF9F0018C625 /* AppDelegate.swift */,
 				C138387A229BFF9F0018C625 /* ViewController.swift */,
 				C138387C229BFF9F0018C625 /* Main.storyboard */,
@@ -202,6 +205,7 @@
 			files = (
 				C138387B229BFF9F0018C625 /* ViewController.swift in Sources */,
 				C1383879229BFF9F0018C625 /* AppDelegate.swift in Sources */,
+				C138389C229C016F0018C625 /* Settings.swift in Sources */,
 				C1383881229BFF9F0018C625 /* XellissimeRecipe.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

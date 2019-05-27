@@ -1,0 +1,487 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		C1383879229BFF9F0018C625 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1383878229BFF9F0018C625 /* AppDelegate.swift */; };
+		C138387B229BFF9F0018C625 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C138387A229BFF9F0018C625 /* ViewController.swift */; };
+		C138387E229BFF9F0018C625 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C138387C229BFF9F0018C625 /* Main.storyboard */; };
+		C1383881229BFF9F0018C625 /* XellissimeRecipe.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C138387F229BFF9F0018C625 /* XellissimeRecipe.xcdatamodeld */; };
+		C1383883229BFFA00018C625 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C1383882229BFFA00018C625 /* Assets.xcassets */; };
+		C1383886229BFFA00018C625 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C1383884229BFFA00018C625 /* LaunchScreen.storyboard */; };
+		C1383891229BFFA00018C625 /* XellissimeRecipeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1383890229BFFA00018C625 /* XellissimeRecipeTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		C138388D229BFFA00018C625 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C138386D229BFF9F0018C625 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C1383874229BFF9F0018C625;
+			remoteInfo = XellissimeRecipe;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		C1383875229BFF9F0018C625 /* XellissimeRecipe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XellissimeRecipe.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C1383878229BFF9F0018C625 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		C138387A229BFF9F0018C625 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		C138387D229BFF9F0018C625 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		C1383880229BFF9F0018C625 /* XellissimeRecipe.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = XellissimeRecipe.xcdatamodel; sourceTree = "<group>"; };
+		C1383882229BFFA00018C625 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C1383885229BFFA00018C625 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		C1383887229BFFA00018C625 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C138388C229BFFA00018C625 /* XellissimeRecipeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = XellissimeRecipeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C1383890229BFFA00018C625 /* XellissimeRecipeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XellissimeRecipeTests.swift; sourceTree = "<group>"; };
+		C1383892229BFFA00018C625 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C1383872229BFF9F0018C625 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C1383889229BFFA00018C625 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		C138386C229BFF9F0018C625 = {
+			isa = PBXGroup;
+			children = (
+				C1383877229BFF9F0018C625 /* XellissimeRecipe */,
+				C138388F229BFFA00018C625 /* XellissimeRecipeTests */,
+				C1383876229BFF9F0018C625 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		C1383876229BFF9F0018C625 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C1383875229BFF9F0018C625 /* XellissimeRecipe.app */,
+				C138388C229BFFA00018C625 /* XellissimeRecipeTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C1383877229BFF9F0018C625 /* XellissimeRecipe */ = {
+			isa = PBXGroup;
+			children = (
+				C1383878229BFF9F0018C625 /* AppDelegate.swift */,
+				C138387A229BFF9F0018C625 /* ViewController.swift */,
+				C138387C229BFF9F0018C625 /* Main.storyboard */,
+				C1383882229BFFA00018C625 /* Assets.xcassets */,
+				C1383884229BFFA00018C625 /* LaunchScreen.storyboard */,
+				C1383887229BFFA00018C625 /* Info.plist */,
+				C138387F229BFF9F0018C625 /* XellissimeRecipe.xcdatamodeld */,
+			);
+			path = XellissimeRecipe;
+			sourceTree = "<group>";
+		};
+		C138388F229BFFA00018C625 /* XellissimeRecipeTests */ = {
+			isa = PBXGroup;
+			children = (
+				C1383890229BFFA00018C625 /* XellissimeRecipeTests.swift */,
+				C1383892229BFFA00018C625 /* Info.plist */,
+			);
+			path = XellissimeRecipeTests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C1383874229BFF9F0018C625 /* XellissimeRecipe */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C1383895229BFFA00018C625 /* Build configuration list for PBXNativeTarget "XellissimeRecipe" */;
+			buildPhases = (
+				C1383871229BFF9F0018C625 /* Sources */,
+				C1383872229BFF9F0018C625 /* Frameworks */,
+				C1383873229BFF9F0018C625 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = XellissimeRecipe;
+			productName = XellissimeRecipe;
+			productReference = C1383875229BFF9F0018C625 /* XellissimeRecipe.app */;
+			productType = "com.apple.product-type.application";
+		};
+		C138388B229BFFA00018C625 /* XellissimeRecipeTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C1383898229BFFA00018C625 /* Build configuration list for PBXNativeTarget "XellissimeRecipeTests" */;
+			buildPhases = (
+				C1383888229BFFA00018C625 /* Sources */,
+				C1383889229BFFA00018C625 /* Frameworks */,
+				C138388A229BFFA00018C625 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C138388E229BFFA00018C625 /* PBXTargetDependency */,
+			);
+			name = XellissimeRecipeTests;
+			productName = XellissimeRecipeTests;
+			productReference = C138388C229BFFA00018C625 /* XellissimeRecipeTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C138386D229BFF9F0018C625 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1020;
+				LastUpgradeCheck = 1020;
+				ORGANIZATIONNAME = GROSSON;
+				TargetAttributes = {
+					C1383874229BFF9F0018C625 = {
+						CreatedOnToolsVersion = 10.2.1;
+					};
+					C138388B229BFFA00018C625 = {
+						CreatedOnToolsVersion = 10.2.1;
+						TestTargetID = C1383874229BFF9F0018C625;
+					};
+				};
+			};
+			buildConfigurationList = C1383870229BFF9F0018C625 /* Build configuration list for PBXProject "XellissimeRecipe" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = C138386C229BFF9F0018C625;
+			productRefGroup = C1383876229BFF9F0018C625 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C1383874229BFF9F0018C625 /* XellissimeRecipe */,
+				C138388B229BFFA00018C625 /* XellissimeRecipeTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C1383873229BFF9F0018C625 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C1383886229BFFA00018C625 /* LaunchScreen.storyboard in Resources */,
+				C1383883229BFFA00018C625 /* Assets.xcassets in Resources */,
+				C138387E229BFF9F0018C625 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C138388A229BFFA00018C625 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C1383871229BFF9F0018C625 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C138387B229BFF9F0018C625 /* ViewController.swift in Sources */,
+				C1383879229BFF9F0018C625 /* AppDelegate.swift in Sources */,
+				C1383881229BFF9F0018C625 /* XellissimeRecipe.xcdatamodeld in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C1383888229BFFA00018C625 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C1383891229BFFA00018C625 /* XellissimeRecipeTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		C138388E229BFFA00018C625 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C1383874229BFF9F0018C625 /* XellissimeRecipe */;
+			targetProxy = C138388D229BFFA00018C625 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		C138387C229BFF9F0018C625 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C138387D229BFF9F0018C625 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		C1383884229BFFA00018C625 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C1383885229BFFA00018C625 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		C1383893229BFFA00018C625 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		C1383894229BFFA00018C625 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C1383896229BFFA00018C625 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2UG4LAMEK9;
+				INFOPLIST_FILE = XellissimeRecipe/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.GROSSON.XellissimeRecipe;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		C1383897229BFFA00018C625 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2UG4LAMEK9;
+				INFOPLIST_FILE = XellissimeRecipe/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.GROSSON.XellissimeRecipe;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		C1383899229BFFA00018C625 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2UG4LAMEK9;
+				INFOPLIST_FILE = XellissimeRecipeTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.GROSSON.XellissimeRecipeTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/XellissimeRecipe.app/XellissimeRecipe";
+			};
+			name = Debug;
+		};
+		C138389A229BFFA00018C625 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2UG4LAMEK9;
+				INFOPLIST_FILE = XellissimeRecipeTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.GROSSON.XellissimeRecipeTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/XellissimeRecipe.app/XellissimeRecipe";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C1383870229BFF9F0018C625 /* Build configuration list for PBXProject "XellissimeRecipe" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C1383893229BFFA00018C625 /* Debug */,
+				C1383894229BFFA00018C625 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C1383895229BFFA00018C625 /* Build configuration list for PBXNativeTarget "XellissimeRecipe" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C1383896229BFFA00018C625 /* Debug */,
+				C1383897229BFFA00018C625 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C1383898229BFFA00018C625 /* Build configuration list for PBXNativeTarget "XellissimeRecipeTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C1383899229BFFA00018C625 /* Debug */,
+				C138389A229BFFA00018C625 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		C138387F229BFF9F0018C625 /* XellissimeRecipe.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				C1383880229BFF9F0018C625 /* XellissimeRecipe.xcdatamodel */,
+			);
+			currentVersion = C1383880229BFF9F0018C625 /* XellissimeRecipe.xcdatamodel */;
+			path = XellissimeRecipe.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = C138386D229BFF9F0018C625 /* Project object */;
+}

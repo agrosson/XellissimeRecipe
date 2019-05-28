@@ -20,6 +20,7 @@
 		C1AC04FF229D095E0079C53E /* NetworkingClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1AC04FE229D095E0079C53E /* NetworkingClient.swift */; };
 		C1AC0523229D13AB0079C53E /* APIKeys.plist in Resources */ = {isa = PBXBuildFile; fileRef = C1AC0522229D13AB0079C53E /* APIKeys.plist */; };
 		C1AC0525229D16010079C53E /* APIKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1AC0524229D16010079C53E /* APIKeys.swift */; };
+		C1C8FBB1229D2944006EB7D8 /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1C8FBB0229D2944006EB7D8 /* Recipe.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +53,7 @@
 		C1AC04FE229D095E0079C53E /* NetworkingClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingClient.swift; sourceTree = "<group>"; };
 		C1AC0522229D13AB0079C53E /* APIKeys.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = APIKeys.plist; sourceTree = "<group>"; };
 		C1AC0524229D16010079C53E /* APIKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKeys.swift; sourceTree = "<group>"; };
+		C1C8FBB0229D2944006EB7D8 /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
 		C808960047EC28427277F4FC /* Pods-XellissimeRecipeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XellissimeRecipeTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-XellissimeRecipeTests/Pods-XellissimeRecipeTests.debug.xcconfig"; sourceTree = "<group>"; };
 		F70C398888D6DE2B33B8985A /* Pods-XellissimeRecipeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XellissimeRecipeTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-XellissimeRecipeTests/Pods-XellissimeRecipeTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -145,6 +147,7 @@
 				C138387F229BFF9F0018C625 /* XellissimeRecipe.xcdatamodeld */,
 				C1AC04FE229D095E0079C53E /* NetworkingClient.swift */,
 				C138389B229C016F0018C625 /* Settings.swift */,
+				C1C8FBB0229D2944006EB7D8 /* Recipe.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -186,7 +189,6 @@
 				C1383871229BFF9F0018C625 /* Sources */,
 				C1383872229BFF9F0018C625 /* Frameworks */,
 				C1383873229BFF9F0018C625 /* Resources */,
-				C138389D229C08010018C625 /* ShellScript */,
 				C5B64A23086CBEA201466454 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
@@ -321,23 +323,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		C138389D229C08010018C625 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
-		};
 		C5B64A23086CBEA201466454 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -369,6 +354,7 @@
 			files = (
 				C1AC0525229D16010079C53E /* APIKeys.swift in Sources */,
 				C138387B229BFF9F0018C625 /* ViewController.swift in Sources */,
+				C1C8FBB1229D2944006EB7D8 /* Recipe.swift in Sources */,
 				C1AC04FF229D095E0079C53E /* NetworkingClient.swift in Sources */,
 				C1383879229BFF9F0018C625 /* AppDelegate.swift in Sources */,
 				C138389C229C016F0018C625 /* Settings.swift in Sources */,

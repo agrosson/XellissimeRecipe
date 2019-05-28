@@ -17,7 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication,
                      didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
-        guard let navFont = UIFont(name: "BradleyHandITCTT-Bold", size: 22) else {return false}
+        guard let navFont = UIFont(name: "BradleyHandITCTT-Bold", size: 28) else {return false}
         let navFontAttribute = [NSAttributedString.Key.font: navFont]
         UIBarButtonItem.appearance().setTitleTextAttributes(navFontAttribute, for: .normal)
         UIBarButtonItem.appearance().setTitleTextAttributes(navFontAttribute, for: .selected)

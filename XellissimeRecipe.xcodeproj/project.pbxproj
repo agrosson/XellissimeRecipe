@@ -19,6 +19,7 @@
 		C138389C229C016F0018C625 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = C138389B229C016F0018C625 /* Settings.swift */; };
 		C1AC04FF229D095E0079C53E /* NetworkingClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1AC04FE229D095E0079C53E /* NetworkingClient.swift */; };
 		C1AC0523229D13AB0079C53E /* APIKeys.plist in Resources */ = {isa = PBXBuildFile; fileRef = C1AC0522229D13AB0079C53E /* APIKeys.plist */; };
+		C1AC0525229D16010079C53E /* APIKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1AC0524229D16010079C53E /* APIKeys.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +51,7 @@
 		C138389B229C016F0018C625 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		C1AC04FE229D095E0079C53E /* NetworkingClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingClient.swift; sourceTree = "<group>"; };
 		C1AC0522229D13AB0079C53E /* APIKeys.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = APIKeys.plist; sourceTree = "<group>"; };
+		C1AC0524229D16010079C53E /* APIKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKeys.swift; sourceTree = "<group>"; };
 		C808960047EC28427277F4FC /* Pods-XellissimeRecipeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XellissimeRecipeTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-XellissimeRecipeTests/Pods-XellissimeRecipeTests.debug.xcconfig"; sourceTree = "<group>"; };
 		F70C398888D6DE2B33B8985A /* Pods-XellissimeRecipeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XellissimeRecipeTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-XellissimeRecipeTests/Pods-XellissimeRecipeTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -118,6 +120,7 @@
 			isa = PBXGroup;
 			children = (
 				C1AC0522229D13AB0079C53E /* APIKeys.plist */,
+				C1AC0524229D16010079C53E /* APIKeys.swift */,
 				C1383887229BFFA00018C625 /* Info.plist */,
 				C1AC0503229D09B40079C53E /* Supporting Files */,
 				C1AC0502229D099E0079C53E /* Views */,
@@ -364,6 +367,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C1AC0525229D16010079C53E /* APIKeys.swift in Sources */,
 				C138387B229BFF9F0018C625 /* ViewController.swift in Sources */,
 				C1AC04FF229D095E0079C53E /* NetworkingClient.swift in Sources */,
 				C1383879229BFF9F0018C625 /* AppDelegate.swift in Sources */,

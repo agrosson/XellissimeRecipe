@@ -2,9 +2,10 @@
 //  ViewController.swift
 //  XellissimeRecipe
 //
-//  Created by ALEXANDRE GROSSON on 27/05/2019.
+//  Created by ALEXANDRE GROSSON on 28/05/2019.
 //  Copyright © 2019 GROSSON. All rights reserved.
 //
+
 
 import UIKit
 import Alamofire
@@ -13,7 +14,7 @@ import Alamofire
 
 
 class ViewController: UIViewController {
-
+    
     // MARK: - Outlets - Label
     @IBOutlet weak var introLabel: UILabel!
     // MARK: - Outlets - TextField and TextView
@@ -24,28 +25,21 @@ class ViewController: UIViewController {
     @IBOutlet weak var clearButton: UIButton!
     @IBOutlet weak var searchButton: UIButton!
     
+    var listOfIngredientsArray = [String]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Set the navigationBar transparent
         //navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
-        navigationController?.navigationBar.shadowImage = UIImage()
+        navigationController?.navigationBar.shadowImage = UIImage(named: "fork")
         setUpPage()
-        gestureTapCreation()
         listOfIngredientsTextView.isEditable = false
-        let url = "https://api.edamam.com/search?q=chicken&app_id=7ba6f788&app_key=58fb0a71d4b3042d003fa99123a86f75"
         
-        Alamofire.request(url).responseJSON { (response) in
-            if let myResponse = response.result.value as? [String : Any] {
-                print(myResponse["count"] as Any)
-            }
-            print("rr")
-          
-        // Do any additional setup after loading the view.
     }
-}
     // MARK: - Actions
     
     @IBAction func addButtonIsPressed(_ sender: UIButton) {
+        addAction()
     }
     @IBAction func clearButtonIsPressed(_ sender: UIButton) {
     }
@@ -53,6 +47,36 @@ class ViewController: UIViewController {
     }
     
     // MARK: - Methods
+    
+    private func searchAction() {
+        let url = "https://api.edamam.com/search?q=chicken&app_id=7ba6f788&app_key=58fb0a71d4b3042d003fa99123a86f75"
+        
+        Alamofire.request(url).responseJSON { (response) in
+            if let myResponse = response.result.value as? [String : Any] {
+                print(myResponse["count"] as Any)
+            }
+            print("rr")
+            
+            // Do any additional setup after loading the view.
+        }
+        
+    }
+    
+    
+    private func addAction(){
+        guard let ingredient = ingredientsTextField.text else {return}
+        if ingredient == "" {
+            print("une alerte à mettre ici")
+        } else {
+            listOfIngredientsArray.append(ingredient)
+            let newLine = "- \(ingredient.capitalized)"
+            listOfIngredientsTextView.text += "\n\t\(newLine)"
+        }
+        ingredientsTextField.text = ""
+        print(listOfIngredientsArray)
+    }
+    
+    
     /**
      Function that manages TextField
      */
@@ -64,7 +88,6 @@ class ViewController: UIViewController {
      */
     private func setUpPage() {
         ingredientsTextField.layer.cornerRadius = 15
-        
         AddButton.layer.borderWidth = 3
         AddButton.layer.cornerRadius = 15
         AddButton.layer.borderColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
@@ -79,11 +102,9 @@ class ViewController: UIViewController {
         listOfIngredientsTextView.layer.borderWidth = 3
         ingredientsTextField.layer.borderColor = #colorLiteral(red: 0.2116547525, green: 0.6101396084, blue: 0.4648743272, alpha: 1)
         ingredientsTextField.layer.borderWidth = 3
-     
- 
-        
         gestureTapCreation()
         gestureswipeCreation()
+        manageTextField()
     }
     /**
      Function that creates a tap gesture
@@ -107,7 +128,7 @@ class ViewController: UIViewController {
      Function that defines a swipe and tap gesture action
      */
     @objc private func myTap() {
-       ingredientsTextField.resignFirstResponder()
+        ingredientsTextField.resignFirstResponder()
     }
 }
 
@@ -117,7 +138,8 @@ extension ViewController: UITextFieldDelegate {
     func textFieldDidBeginEditing(_ textField: UITextField) {
     }
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        textField.resignFirstResponder()
+        addAction()
+        ingredientsTextField.resignFirstResponder()
         return true
     }
 }

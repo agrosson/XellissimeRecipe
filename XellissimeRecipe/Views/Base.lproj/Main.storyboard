@@ -17,7 +17,9 @@
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="3H0-YZ-HHz">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="barTintColor" red="0.49623023040000003" green="0.69865077730000003" blue="0.61791028290000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="selectedImageTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
                         <segue destination="nPh-WX-JDv" kind="relationship" relationship="viewControllers" id="ryO-7K-H3k"/>
@@ -33,9 +35,22 @@
             <objects>
                 <navigationController id="nPh-WX-JDv" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Search" id="XJm-yD-75l"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="JuY-Bb-4Za">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" id="JuY-Bb-4Za" userLabel="XellissimeRecipe">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="barTintColor" red="0.49623023040000003" green="0.69865077730000003" blue="0.61791028290000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="textShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <offsetWrapper key="textShadowOffset" horizontal="1" vertical="0.0"/>
+                        </textAttributes>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="textShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <offsetWrapper key="textShadowOffset" horizontal="1" vertical="1"/>
+                        </textAttributes>
                     </navigationBar>
                     <connections>
                         <segue destination="F9k-eK-JjR" kind="relationship" relationship="rootViewController" id="4s9-AG-LRo"/>
@@ -45,7 +60,7 @@
             </objects>
             <point key="canvasLocation" x="-1167" y="-1347"/>
         </scene>
-        <!--View Controller-->
+        <!--XellissimeRecipe-->
         <scene sceneID="wFz-DB-3Yy">
             <objects>
                 <viewController id="F9k-eK-JjR" customClass="ViewController" customModule="XellissimeRecipe" customModuleProvider="target" sceneMemberID="viewController">
@@ -59,28 +74,84 @@
                                 <color key="textColor" red="0.97674978599999995" green="0.058663590289999998" blue="0.069022705749999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1H9-8A-hge">
+                                <rect key="frame" x="8" y="757" width="398" height="48"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
+                                <state key="normal" title="Search for recipe">
+                                    <color key="titleColor" red="0.33007979389999997" green="0.6018631458" blue="0.47449618580000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                                <connections>
+                                    <segue destination="lMd-HF-YCE" kind="show" id="yjL-gI-BS6"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="rfM-fA-gMC" firstAttribute="trailing" secondItem="1H9-8A-hge" secondAttribute="trailing" constant="8" id="GOT-Wf-kUc"/>
+                            <constraint firstItem="rfM-fA-gMC" firstAttribute="bottom" secondItem="1H9-8A-hge" secondAttribute="bottom" constant="8" id="Na5-nP-QY9"/>
                             <constraint firstItem="YN2-Ja-HBE" firstAttribute="centerX" secondItem="btk-HW-mpa" secondAttribute="centerX" id="Rqn-dB-6vA"/>
                             <constraint firstItem="YN2-Ja-HBE" firstAttribute="centerY" secondItem="btk-HW-mpa" secondAttribute="centerY" id="bOZ-Ib-aeg"/>
+                            <constraint firstItem="1H9-8A-hge" firstAttribute="leading" secondItem="rfM-fA-gMC" secondAttribute="leading" constant="8" id="thP-zh-oEk"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="rfM-fA-gMC"/>
                     </view>
-                    <navigationItem key="navigationItem" id="sXo-wP-Pjo"/>
+                    <navigationItem key="navigationItem" title="XellissimeRecipe" id="sXo-wP-Pjo">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="HHd-Kl-ScR"/>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Ff-HS-o4X" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-387" y="-1351"/>
+        </scene>
+        <!--XellissimeRecipe-->
+        <scene sceneID="PhK-8L-CJZ">
+            <objects>
+                <tableViewController title="XellissimeRecipe" id="lMd-HF-YCE" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="yvO-uM-hd3">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="kjt-t6-0MF">
+                                <rect key="frame" x="0.0" y="28" width="414" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="kjt-t6-0MF" id="oFr-Ud-Qbb">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="lMd-HF-YCE" id="bMk-OK-O4X"/>
+                            <outlet property="delegate" destination="lMd-HF-YCE" id="vF6-CE-Fjg"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Lk6-bj-lLr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="462" y="-1351"/>
         </scene>
         <!--Favorite-->
         <scene sceneID="hsv-0c-X6y">
             <objects>
                 <navigationController id="PeZ-hu-WKJ" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Favorite" id="CL6-J5-b0j"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="u9G-BI-yYl">
+                    <navigationBar key="navigationBar" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" id="u9G-BI-yYl" userLabel="XellissimeRecipe">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="barTintColor" red="0.49623023040000003" green="0.69865077730000003" blue="0.61791028290000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="textShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <offsetWrapper key="textShadowOffset" horizontal="1" vertical="1"/>
+                        </textAttributes>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="textShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <offsetWrapper key="textShadowOffset" horizontal="1" vertical="1"/>
+                        </textAttributes>
                     </navigationBar>
                     <connections>
                         <segue destination="HeM-H4-cfU" kind="relationship" relationship="rootViewController" id="PIO-6n-3VC"/>
@@ -90,7 +161,7 @@
             </objects>
             <point key="canvasLocation" x="-1151" y="-617"/>
         </scene>
-        <!--View Controller-->
+        <!--XellissimeRecipe-->
         <scene sceneID="B2e-X0-E78">
             <objects>
                 <viewController id="HeM-H4-cfU" sceneMemberID="viewController">
@@ -112,7 +183,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="XpG-vw-EED"/>
                     </view>
-                    <navigationItem key="navigationItem" id="ywC-PZ-2ce"/>
+                    <navigationItem key="navigationItem" title="XellissimeRecipe" id="ywC-PZ-2ce"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LGe-VG-Oe3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

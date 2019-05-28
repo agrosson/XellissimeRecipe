@@ -16,6 +16,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication,
                      didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        
+        guard let navFont = UIFont(name: "BradleyHandITCTT-Bold", size: 22) else {return false}
+        let navFontAttribute = [NSAttributedString.Key.font: navFont]
+        UIBarButtonItem.appearance().setTitleTextAttributes(navFontAttribute, for: .normal)
+        UIBarButtonItem.appearance().setTitleTextAttributes(navFontAttribute, for: .selected)
+        UIBarButtonItem.appearance().setTitleTextAttributes(navFontAttribute, for: .highlighted)
+        UITabBarItem.appearance().setTitleTextAttributes(navFontAttribute, for: .selected)
+        UITabBarItem.appearance().setTitleTextAttributes(navFontAttribute, for: .normal)
+        UITabBarItem.appearance().setTitleTextAttributes(navFontAttribute, for: .highlighted)
+        UINavigationBar.appearance().titleTextAttributes = navFontAttribute
+    
+        
+        
 
         return true
     }

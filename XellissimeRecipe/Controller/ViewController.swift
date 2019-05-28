@@ -14,8 +14,9 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-
+        // Set the navigationBar transparent
+       // navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        navigationController?.navigationBar.shadowImage = UIImage()
         
         let url = "https://api.edamam.com/search?q=chicken&app_id=7ba6f788&app_key=58fb0a71d4b3042d003fa99123a86f75"
         

@@ -44,6 +44,8 @@ class ViewController: UIViewController {
     @IBAction func clearButtonIsPressed(_ sender: UIButton) {
     }
     @IBAction func searchButtonIsPressed(_ sender: UIButton) {
+        
+        NetworkingClient.shared.search(with: listOfIngredientsArray)
     }
     
     // MARK: - Methods

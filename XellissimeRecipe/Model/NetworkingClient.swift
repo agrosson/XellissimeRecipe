@@ -11,10 +11,10 @@ import Alamofire
 
 class NetworkingClient {
     
-    let shared = NetworkingClient()
-    init(){}
+    static var shared = NetworkingClient()
+    private init() {}
     
-    private func search(with ingredients: [String]){
+    func search(with ingredients: [String]){
         var items = ""
         for ingredient in ingredients{
             items += "+\(ingredient)"

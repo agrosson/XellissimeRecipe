@@ -33,9 +33,30 @@ class NetworkingClient {
         let url = "https://api.edamam.com/search?q=\(items)&app_id=\(appId)&app_key=\(appKey)&to=20"
         Alamofire.request(url).responseJSON { (response) in
             if let myResponse = response.result.value as? [String : Any] {
-                
-                print(myResponse["count"] as Any)
-                print(myResponse)
+                if let hits = myResponse["hits"] as? [[String : Any]] {
+                    print("là")
+                    print(hits.count)
+                    let numberOfResponse = hits.count
+                    for number in 0..<numberOfResponse {
+                        let recipeToShow = MyRecipe(name: "")
+                        if let recipeDetails = hits[number]["recipe"] as? [String : Any] {
+                            if let recipeName = recipeDetails["label"] as? String {
+                                print("Victoire on a le nom de la recette \(recipeName)")
+                                recipeToShow.name = recipeName
+                            }
+                            if let recipeImage = recipeDetails["image"] as? String {
+                                print("le lien de l'image est le suivant : \(recipeImage)")
+                                recipeToShow.urlPhoto = recipeImage
+                            }
+                            if let recipeDetails = recipeDetails["url"] as? String {
+                                print("le lien de la recette est le suivant : \(recipeDetails)")
+                                recipeToShow.urlRecipeDetail = recipeDetails
+                            }
+                        }
+                    }
+                   
+                }
+
             }
         }
     }

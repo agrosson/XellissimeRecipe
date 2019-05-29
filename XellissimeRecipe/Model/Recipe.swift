@@ -17,11 +17,11 @@ class Favorite {
 
 class MyRecipe {
     
-    let name : String
-    let urlPhoto = String()
-    let urlRecipeDetail = String()
-    let ingredient = [String:String]()
-    let cookingTime = String()
+    var name : String
+    var urlPhoto = String()
+    var urlRecipeDetail = String()
+    var ingredient = [String:String]()
+    var cookingTime = String()
     
     init(name: String) {
         self.name = name

@@ -20,8 +20,8 @@ class MyRecipe {
     var name : String
     var urlPhoto = String()
     var urlRecipeDetail = String()
-    var ingredient = [String:String]()
-    var cookingTime = String()
+    var ingredient = [String]()
+    var cookingTime = Int()
     
     init(name: String) {
         self.name = name

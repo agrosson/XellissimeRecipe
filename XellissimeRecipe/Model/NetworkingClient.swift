@@ -30,7 +30,7 @@ class NetworkingClient {
         let appId = valueForAPIKey(named: "APIEdamamId")
         let appKey = valueForAPIKey(named: "APIEdamamKeys")
         // Number of response si limited to 20
-        let url = "https://api.edamam.com/search?q=\(items)&app_id=\(appId)&app_key=\(appKey)&to=20"
+        let url = "https://api.edamam.com/search?q=\(items)&app_id=\(appId)&app_key=\(appKey)&to=3"
         Alamofire.request(url).responseJSON { (response) in
             guard let myResponse = response.result.value as? [String : Any] else {return}
             guard let hits = myResponse["hits"] as? [[String : Any]] else {return}
@@ -49,6 +49,15 @@ class NetworkingClient {
                 guard let recipePrepare = recipeDetails["url"] as? String else {return}
                 print("le lien de la recette est le suivant : \(recipePrepare)")
                 recipeToShow.urlRecipeDetail = recipePrepare
+                guard let recipeIngredients = recipeDetails["ingredientLines"] as? [String] else {return}
+                for individualIngredient in recipeIngredients {
+                    print(individualIngredient)
+                    recipeToShow.ingredient.append(individualIngredient)
+                }
+                guard let recipeTime = recipeDetails["totalTime"] as? Int else {return}
+                print("le temps de préparation est de : \(recipeTime) minutes")
+                recipeToShow.cookingTime = recipeTime
+                self.listOfRecipes.append(recipeToShow)
             }
         }
     }

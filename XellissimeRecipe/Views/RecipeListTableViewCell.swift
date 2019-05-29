@@ -40,7 +40,8 @@ class RecipeListTableViewCell: UITableViewCell {
             imageRecipe.image = basicImage
         }
         nameRecipe.textColor = .white
-        timeRecipe.textColor = .white
+        timeRecipe.textColor = .black
+        ingredientsRecipe.textColor = .white
         nameRecipe.text = name
         if  time == 0 {
             timeRecipe.text = "No time indication"
@@ -53,7 +54,7 @@ class RecipeListTableViewCell: UITableViewCell {
         }
         ingredientsRecipe.text = text
         
-        print("c'est ici que je charche à voir "+text)
+        print("c'est ici que je cherche à voir "+text)
     }
     
     func image( _ image:UIImage, withSize newSize:CGSize) -> UIImage {

@@ -15,6 +15,8 @@ class ListRecipesViewController: UIViewController  {
         super.viewDidLoad()
         print(listOfRecipes.count)
         print(listOfRecipes)
+        tableView.estimatedRowHeight = tableView.rowHeight
+        tableView.rowHeight = UITableView.automaticDimension
         tableView.reloadData()
     }
     
@@ -41,4 +43,23 @@ extension ListRecipesViewController: UITableViewDataSource {
         cell.configure(withImage: recipe.urlPhoto, name: recipe.name, time: recipe.cookingTime, ingredients: recipe.ingredient)
         return cell
     }
+}
+
+extension ListRecipesViewController: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "showRecipeDetail", sender: self)
+    }
+    
+    
+    // showRecipeDetail
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // check the segue name
+            // si la destination est le VC DetailViewController, and set the index from the selected item
+        if let dest = segue.destination as? RecipeDetailViewController {
+            dest.recipe = listOfRecipes[0]
+            }
+        }
+    
+    
 }

@@ -19,7 +19,9 @@ class NetworkingClient {
         for ingredient in ingredients{
             items += "+\(ingredient)"
         }
-        let url = "https://api.edamam.com/search?q=\(items)&app_id=7ba6f788&app_key=58fb0a71d4b3042d003fa99123a86f75"
+        let appId = valueForAPIKey(named: "APIEdamamId")
+        let appKey = valueForAPIKey(named: "APIEdamamKeys")
+        let url = "https://api.edamam.com/search?q=\(items)&app_id=\(appId)&app_key=\(appKey)"
         
         Alamofire.request(url).responseJSON { (response) in
             if let myResponse = response.result.value as? [String : Any] {

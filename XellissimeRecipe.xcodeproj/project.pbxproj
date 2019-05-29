@@ -21,6 +21,7 @@
 		C1AC0525229D16010079C53E /* APIKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1AC0524229D16010079C53E /* APIKeys.swift */; };
 		C1C8FBB1229D2944006EB7D8 /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1C8FBB0229D2944006EB7D8 /* Recipe.swift */; };
 		C1C8FBD1229DD774006EB7D8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1C8FBD0229DD774006EB7D8 /* ViewController.swift */; };
+		C1E94E84229E5F8A00468D47 /* NetworkingClientTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1E94E83229E5F8A00468D47 /* NetworkingClientTest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +55,7 @@
 		C1AC0524229D16010079C53E /* APIKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKeys.swift; sourceTree = "<group>"; };
 		C1C8FBB0229D2944006EB7D8 /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
 		C1C8FBD0229DD774006EB7D8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		C1E94E83229E5F8A00468D47 /* NetworkingClientTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingClientTest.swift; sourceTree = "<group>"; };
 		C808960047EC28427277F4FC /* Pods-XellissimeRecipeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XellissimeRecipeTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-XellissimeRecipeTests/Pods-XellissimeRecipeTests.debug.xcconfig"; sourceTree = "<group>"; };
 		F70C398888D6DE2B33B8985A /* Pods-XellissimeRecipeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XellissimeRecipeTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-XellissimeRecipeTests/Pods-XellissimeRecipeTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -136,6 +138,7 @@
 			isa = PBXGroup;
 			children = (
 				C1383890229BFFA00018C625 /* XellissimeRecipeTests.swift */,
+				C1E94E83229E5F8A00468D47 /* NetworkingClientTest.swift */,
 				C1383892229BFFA00018C625 /* Info.plist */,
 			);
 			path = XellissimeRecipeTests;
@@ -366,6 +369,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C1E94E84229E5F8A00468D47 /* NetworkingClientTest.swift in Sources */,
 				C1383891229BFFA00018C625 /* XellissimeRecipeTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

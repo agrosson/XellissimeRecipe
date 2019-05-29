@@ -8,6 +8,27 @@
 
 import Foundation
 
+
+class Favorite {
+    var myFavorite = [MyRecipe]()
+}
+
+
+
+class MyRecipe {
+    
+    let name : String
+    let urlPhoto = String()
+    let urlRecipeDetail = String()
+    let ingredient = [String:String]()
+    let cookingTime = String()
+    
+    init(name: String) {
+        self.name = name
+    }
+}
+
+
 // MARK: - RecipeResponse
 class RecipeResponse: Codable {
     let q: String?

@@ -27,6 +27,7 @@ class ViewController: UIViewController {
     
     var listOfIngredientsArray = [String]()
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Set the navigationBar transparent
@@ -42,9 +43,10 @@ class ViewController: UIViewController {
         addAction()
     }
     @IBAction func clearButtonIsPressed(_ sender: UIButton) {
+        listOfIngredientsTextView.text = "Your ingredients:"
+        listOfIngredientsArray = [String]()
     }
     @IBAction func searchButtonIsPressed(_ sender: UIButton) {
-        
         NetworkingClient.shared.search(with: listOfIngredientsArray)
     }
     
@@ -92,6 +94,11 @@ class ViewController: UIViewController {
         gestureTapCreation()
         gestureswipeCreation()
         manageTextField()
+        clearButton.setTitle(" Clear ", for: .normal)
+        
+        let wid = clearButton.intrinsicContentSize.width
+        clearButton.widthAnchor.constraint(equalToConstant: wid).isActive = true
+        AddButton.widthAnchor.constraint(equalToConstant: wid).isActive = true
     }
     /**
      Function that creates a tap gesture

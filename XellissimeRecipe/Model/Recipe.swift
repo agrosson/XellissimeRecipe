@@ -9,11 +9,11 @@
 import Foundation
 
 
+var listOfRecipes = [MyRecipe]()
+
 class Favorite {
     var myFavorite = [MyRecipe]()
 }
-
-
 
 class MyRecipe {
     

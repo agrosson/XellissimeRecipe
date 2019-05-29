@@ -26,13 +26,14 @@ class ViewController: UIViewController {
     @IBOutlet weak var searchButton: UIButton!
     
     var listOfIngredientsArray = [String]()
+    var testListRecipe = [MyRecipe]()
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Set the navigationBar transparent
         //navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
-        navigationController?.navigationBar.shadowImage = UIImage(named: "fork")
+        //navigationController?.navigationBar.shadowImage = UIImage(named: "fork")
         setUpPage()
         listOfIngredientsTextView.isEditable = false
         
@@ -47,9 +48,27 @@ class ViewController: UIViewController {
         listOfIngredientsArray = [String]()
     }
     @IBAction func searchButtonIsPressed(_ sender: UIButton) {
-        NetworkingClient.shared.search(with: listOfIngredientsArray)
+        NetworkingClient.shared.search(with: listOfIngredientsArray){ (success, returnlistOfRecipes) in
+            if returnlistOfRecipes != nil {
+            print("on est là avec \(listOfRecipes.count) recettes")
+            self.performSegue(withIdentifier: "goList", sender: self)
+            } else {
+                print("y a un bug ici")
+            }
+        }
     }
-    
+    /*
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // check the segue name
+        if segue.identifier == "goList" {
+            // si la destination est le VC DetailViewController, and set the index from the selected item
+            if let dest = segue.destination as? ListRecipesViewController{
+                print("on est bon là ")
+                
+            }
+        }
+    }
+    */
     // MARK: - Methods
         
     private func addAction(){

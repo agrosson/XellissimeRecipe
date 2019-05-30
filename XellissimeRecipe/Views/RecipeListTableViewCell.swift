@@ -9,7 +9,6 @@
 import UIKit
 
 class RecipeListTableViewCell: UITableViewCell {
-
     @IBOutlet weak var imageRecipe: UIImageView!
     @IBOutlet weak var nameRecipe: UILabel!
     @IBOutlet weak var timeRecipe: UILabel!
@@ -53,7 +52,5 @@ class RecipeListTableViewCell: UITableViewCell {
             text += "\(item)\n"
         }
         ingredientsRecipe.text = text
-        
-        print("c'est ici que je cherche à voir "+text)
     }
 }

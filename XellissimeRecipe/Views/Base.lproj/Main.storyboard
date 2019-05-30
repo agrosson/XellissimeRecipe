@@ -406,7 +406,7 @@
                                 <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="FavoriteCell" rowHeight="394" id="Ev8-2l-KZh">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="FavoriteCell" rowHeight="394" id="Ev8-2l-KZh" customClass="FavoriteTableViewCell" customModule="XellissimeRecipe" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="394"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Ev8-2l-KZh" id="K2J-9k-NXT" customClass="FavoriteTableViewCell" customModule="XellissimeRecipe" customModuleProvider="target">
@@ -455,6 +455,11 @@
                                                 <constraint firstAttribute="trailingMargin" secondItem="YZw-Uz-bgj" secondAttribute="trailing" constant="8" id="lxM-mO-k8j"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="recipeCookingTime" destination="YZw-Uz-bgj" id="Caa-gH-qEX"/>
+                                            <outlet property="recipeImage" destination="c52-F8-t5X" id="Zhh-Fs-hwr"/>
+                                            <outlet property="recipeName" destination="14B-JS-ubH" id="GXr-Og-H3G"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -469,10 +474,13 @@
                         <viewLayoutGuide key="safeArea" id="XpG-vw-EED"/>
                     </view>
                     <navigationItem key="navigationItem" title="XellissimeRecipe" id="ywC-PZ-2ce"/>
+                    <connections>
+                        <outlet property="tableView" destination="SUa-jd-gSa" id="d0g-F8-Sua"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LGe-VG-Oe3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="576.81159420289862" y="-756.02678571428567"/>
+            <point key="canvasLocation" x="99" y="-606"/>
         </scene>
     </scenes>
     <resources>

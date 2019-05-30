@@ -13,8 +13,7 @@ class ListRecipesViewController: UIViewController  {
     @IBOutlet weak var tableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(listOfRecipes.count)
-        print(listOfRecipes)
+
         tableView.estimatedRowHeight = tableView.rowHeight
         tableView.rowHeight = UITableView.automaticDimension
         tableView.reloadData()

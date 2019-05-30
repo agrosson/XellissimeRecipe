@@ -92,11 +92,25 @@ class RecipeDetailViewController: UIViewController {
     private func favoriteSwitch(){
         if favoriteStar.currentImage == UIImage(imageLiteralResourceName: "favoriteNotSelected") {
             favoriteStar.setImage(UIImage(named: "favoriteSelected"), for: .normal)
+            saveToFavorite(recipe: recipe)
             //Todo add in favorite
         } else {
             favoriteStar.setImage(UIImage(named: "favoriteNotSelected"), for: .normal)
             //Todo remove from favorite
         }
+    }
+    
+    private func saveToFavorite(recipe: MyRecipe){
+        let savedRecipe = CoreRecipe(context: AppDelegate.viewContext)
+        savedRecipe.name = recipe.name
+        savedRecipe.urlPhoto = recipe.urlPhoto
+        savedRecipe.urlRecipeDetails = recipe.urlRecipeDetail
+        savedRecipe.ingredient = recipe.ingredient
+        savedRecipe.cookingTime = Int16(recipe.cookingTime)
+        let saveFavorite = CoreFavorite(context: AppDelegate.viewContext)
+        saveFavorite.myFavorite?.append(savedRecipe)
+        try? AppDelegate.viewContext.save()
+        
     }
     
 }

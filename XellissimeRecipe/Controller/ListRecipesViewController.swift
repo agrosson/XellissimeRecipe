@@ -56,8 +56,8 @@ extension ListRecipesViewController: UITableViewDelegate {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // check the segue name
             // si la destination est le VC DetailViewController, and set the index from the selected item
-        if let dest = segue.destination as? RecipeDetailViewController {
-            dest.recipe = listOfRecipes[0]
+        if let dest = segue.destination as? RecipeDetailViewController, let row = tableView.indexPathForSelectedRow?.row {
+            dest.recipe = listOfRecipes[row]
             }
         }
     

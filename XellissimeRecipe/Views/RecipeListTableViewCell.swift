@@ -34,7 +34,7 @@ class RecipeListTableViewCell: UITableViewCell {
         imageToGet = UIImage(data: data!)
         let mySize = CGSize(width: 100, height: 100)
         if let myImage = imageToGet {
-            imageRecipe.image = image(myImage, withSize: mySize)
+            imageRecipe.image = imageResize(myImage, withSize: mySize)
         } else {
             guard let basicImage = UIImage(named: "straw") else {return}
             imageRecipe.image = basicImage
@@ -55,14 +55,5 @@ class RecipeListTableViewCell: UITableViewCell {
         ingredientsRecipe.text = text
         
         print("c'est ici que je cherche à voir "+text)
-    }
-    
-    func image( _ image:UIImage, withSize newSize:CGSize) -> UIImage {
-        
-        UIGraphicsBeginImageContext(newSize)
-        image.draw(in: CGRect(x: 0,y: 0,width: newSize.width,height: newSize.height))
-        let newImage = UIGraphicsGetImageFromCurrentImageContext()
-        UIGraphicsEndImageContext()
-        return newImage!.withRenderingMode(.automatic)
     }
 }

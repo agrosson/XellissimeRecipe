@@ -24,6 +24,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var AddButton: UIButton!
     @IBOutlet weak var clearButton: UIButton!
     @IBOutlet weak var searchButton: UIButton!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     var listOfIngredientsArray = [String]()
     var testListRecipe = [MyRecipe]()
@@ -34,6 +35,7 @@ class ViewController: UIViewController {
         // Set the navigationBar transparent
         //navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         //navigationController?.navigationBar.shadowImage = UIImage(named: "fork")
+        activityIndicator.isHidden = true
         setUpPage()
         listOfIngredientsTextView.isEditable = false
         
@@ -48,33 +50,51 @@ class ViewController: UIViewController {
         listOfIngredientsArray = [String]()
     }
     @IBAction func searchButtonIsPressed(_ sender: UIButton) {
-        NetworkingClient.shared.search(with: listOfIngredientsArray){ (success, returnlistOfRecipes) in
-            if returnlistOfRecipes != nil {
-            print("on est là avec \(listOfRecipes.count) recettes")
-            self.performSegue(withIdentifier: "goList", sender: self)
-            } else {
-                print("y a un bug ici")
+        toggleActivityIndicator(shown: true)
+        if listOfIngredientsArray.count == 0 {
+            Alert.shared.controller = self
+            Alert.shared.alertDisplay = .emptyListOfIngredient
+            self.toggleActivityIndicator(shown: false)
+        } else {
+            
+            NetworkingClient.shared.search(with: listOfIngredientsArray){ (success, returnlistOfRecipes) in
+                self.toggleActivityIndicator(shown: false)
+                if returnlistOfRecipes != nil {
+                    print("on est là avec \(listOfRecipes.count) recettes")
+                    guard listOfRecipes.count != 0 else {
+                        Alert.shared.controller = self
+                        Alert.shared.alertDisplay = .noRecipe
+                        self.toggleActivityIndicator(shown: false)
+                        return
+                    }
+                    self.performSegue(withIdentifier: "goList", sender: self)
+                } else {
+                    Alert.shared.controller = self
+                    Alert.shared.alertDisplay = .requestCrash
+                }
             }
         }
+
     }
-    /*
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // check the segue name
-        if segue.identifier == "goList" {
-            // si la destination est le VC DetailViewController, and set the index from the selected item
-            if let dest = segue.destination as? ListRecipesViewController{
-                print("on est bon là ")
-                
-            }
-        }
-    }
-    */
+    
     // MARK: - Methods
-        
+    /**
+     Function to show/hide activity indicator
+     */
+    private func toggleActivityIndicator(shown: Bool){
+        activityIndicator.isHidden = !shown
+        searchButton.isHidden = shown
+    }
+    /**
+     Function to show/hide activity indicator
+     */
     private func addAction(){
-        guard let ingredient = ingredientsTextField.text else {return}
+        guard var ingredient = ingredientsTextField.text else {return}
+        ingredient.removeFirstAndLastAndDoubleWhitespace()
         if ingredient == "" {
-            print("une alerte à mettre ici")
+            Alert.shared.controller = self
+            Alert.shared.alertDisplay = .noIngredientToAdd
+            self.toggleActivityIndicator(shown: false)
         } else {
             listOfIngredientsArray.append(ingredient)
             let newLine = "- \(ingredient.capitalized)"
@@ -83,8 +103,6 @@ class ViewController: UIViewController {
         ingredientsTextField.text = ""
         print(listOfIngredientsArray)
     }
-    
-    
     /**
      Function that manages TextField
      */

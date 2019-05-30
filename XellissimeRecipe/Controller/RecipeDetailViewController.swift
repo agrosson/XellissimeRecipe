@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SafariServices
 
 class RecipeDetailViewController: UIViewController {
 
@@ -15,6 +16,7 @@ class RecipeDetailViewController: UIViewController {
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var recipeDescription: UILabel!
     
+    @IBOutlet weak var durationLabel: UILabel!
     @IBOutlet weak var favoriteStar: UIButton!
     
     @IBOutlet weak var recipePicture: UIImageView!
@@ -22,9 +24,11 @@ class RecipeDetailViewController: UIViewController {
     @IBOutlet weak var recipeOnSafari: UIButton!
     
     @IBAction func favoriteIsPressed(_ sender: UIButton) {
+        favoriteSwitch()
     }
     
     @IBAction func seeRecipeIsPressed(_ sender: Any) {
+        showSafariVC(for: recipe.urlRecipeDetail)
     }
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -66,5 +70,33 @@ class RecipeDetailViewController: UIViewController {
         recipeOnSafari.layer.borderColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
         recipeOnSafari.layer.cornerRadius = 15
         
+        let time = recipe.cookingTime
+        if  time == 0 {
+            durationLabel.text = "No cooking time indication"
+        } else {
+            durationLabel.text = "Cooking time: \(time) minutes"
+        }
+        
     }
+    private func showSafariVC(for url: String){
+        guard let url = URL(string: url) else {
+            print("error with url")
+            // TODO create an alert
+            return
+        }
+        let safariVC = SFSafariViewController(url: url)
+        present(safariVC, animated: true, completion: nil)
+        
+    }
+    
+    private func favoriteSwitch(){
+        if favoriteStar.currentImage == UIImage(imageLiteralResourceName: "favoriteNotSelected") {
+            favoriteStar.setImage(UIImage(named: "favoriteSelected"), for: .normal)
+            //Todo add in favorite
+        } else {
+            favoriteStar.setImage(UIImage(named: "favoriteNotSelected"), for: .normal)
+            //Todo remove from favorite
+        }
+    }
+    
 }

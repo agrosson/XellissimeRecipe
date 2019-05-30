@@ -19,3 +19,24 @@ import UIKit
     UIGraphicsEndImageContext()
     return newImage!.withRenderingMode(.automatic)
 }
+
+/**
+ This extension enables to remove inaccurate whitespace
+ */
+extension String {
+    mutating func removeFirstAndLastAndDoubleWhitespace() {
+        var newString = self
+        repeat {
+            if newString.last == " " || newString.last == "\""{
+                newString = String(newString.dropLast())
+            }
+            if newString.first == " " || newString.first == "\""{
+                newString = String(newString.dropFirst())
+            }
+        }
+            while newString.first == " " || newString.last == " " || newString.last == "\"" || newString.first == "\""
+        repeat { newString = newString.replacingOccurrences(of: "  ", with: " ")
+        } while newString.contains("  ")
+        self =  newString
+    }
+}

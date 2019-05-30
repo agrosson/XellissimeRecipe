@@ -29,7 +29,7 @@ class NetworkingClient {
         let appKey = valueForAPIKey(named: "APIEdamamKeys")
         // Number of response si limited to 20
         let url = "https://api.edamam.com/search?q=\(items)&app_id=\(appId)&app_key=\(appKey)&to=15"
-        
+        print("le lien est le suivnat \(url)")
         Alamofire.request(url).responseJSON { (response) in
             DispatchQueue.main.async {
                 guard let myResponse = response.result.value as? [String : Any] else { callBack(false, nil);return}

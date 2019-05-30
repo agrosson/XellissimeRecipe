@@ -20,8 +20,8 @@
 		C170A97322A004DB00AD2928 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = C170A97222A004DB00AD2928 /* Alert.swift */; };
 		C179B51C229EE2F200BC15A9 /* RecipeListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C179B51B229EE2F200BC15A9 /* RecipeListTableViewCell.swift */; };
 		C1AC04FF229D095E0079C53E /* NetworkingClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1AC04FE229D095E0079C53E /* NetworkingClient.swift */; };
-		C1AC0523229D13AB0079C53E /* APIKeys.plist in Resources */ = {isa = PBXBuildFile; fileRef = C1AC0522229D13AB0079C53E /* APIKeys.plist */; };
-		C1AC0525229D16010079C53E /* APIKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1AC0524229D16010079C53E /* APIKeys.swift */; };
+		C1C1CAC422A0379E0020877E /* APIKeys.plist in Resources */ = {isa = PBXBuildFile; fileRef = C1C1CAC322A0379E0020877E /* APIKeys.plist */; };
+		C1C1CAC622A038630020877E /* APIKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1C1CAC522A038630020877E /* APIKeys.swift */; };
 		C1C8FBB1229D2944006EB7D8 /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1C8FBB0229D2944006EB7D8 /* Recipe.swift */; };
 		C1C8FBD1229DD774006EB7D8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1C8FBD0229DD774006EB7D8 /* ViewController.swift */; };
 		C1E94E84229E5F8A00468D47 /* NetworkingClientTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1E94E83229E5F8A00468D47 /* NetworkingClientTest.swift */; };
@@ -58,8 +58,8 @@
 		C170A97222A004DB00AD2928 /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		C179B51B229EE2F200BC15A9 /* RecipeListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeListTableViewCell.swift; sourceTree = "<group>"; };
 		C1AC04FE229D095E0079C53E /* NetworkingClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingClient.swift; sourceTree = "<group>"; };
-		C1AC0522229D13AB0079C53E /* APIKeys.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = APIKeys.plist; sourceTree = "<group>"; };
-		C1AC0524229D16010079C53E /* APIKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKeys.swift; sourceTree = "<group>"; };
+		C1C1CAC322A0379E0020877E /* APIKeys.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = APIKeys.plist; sourceTree = "<group>"; };
+		C1C1CAC522A038630020877E /* APIKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKeys.swift; sourceTree = "<group>"; };
 		C1C8FBB0229D2944006EB7D8 /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
 		C1C8FBD0229DD774006EB7D8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		C1E94E83229E5F8A00468D47 /* NetworkingClientTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingClientTest.swift; sourceTree = "<group>"; };
@@ -131,9 +131,9 @@
 		C1383877229BFF9F0018C625 /* XellissimeRecipe */ = {
 			isa = PBXGroup;
 			children = (
-				C1AC0522229D13AB0079C53E /* APIKeys.plist */,
-				C1AC0524229D16010079C53E /* APIKeys.swift */,
 				C1383887229BFFA00018C625 /* Info.plist */,
+				C1C1CAC322A0379E0020877E /* APIKeys.plist */,
+				C1C1CAC522A038630020877E /* APIKeys.swift */,
 				C1AC0503229D09B40079C53E /* Supporting Files */,
 				C1AC0502229D099E0079C53E /* Views */,
 				C1AC0501229D098B0079C53E /* Controller */,
@@ -278,7 +278,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C1383886229BFFA00018C625 /* LaunchScreen.storyboard in Resources */,
-				C1AC0523229D13AB0079C53E /* APIKeys.plist in Resources */,
+				C1C1CAC422A0379E0020877E /* APIKeys.plist in Resources */,
 				C1383883229BFFA00018C625 /* Assets.xcassets in Resources */,
 				C138387E229BFF9F0018C625 /* Main.storyboard in Resources */,
 			);
@@ -367,8 +367,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C1C1CAC622A038630020877E /* APIKeys.swift in Sources */,
 				C1E94E88229EB9D600468D47 /* ListRecipesViewController.swift in Sources */,
-				C1AC0525229D16010079C53E /* APIKeys.swift in Sources */,
 				C1C8FBB1229D2944006EB7D8 /* Recipe.swift in Sources */,
 				C179B51C229EE2F200BC15A9 /* RecipeListTableViewCell.swift in Sources */,
 				C1AC04FF229D095E0079C53E /* NetworkingClient.swift in Sources */,

@@ -56,7 +56,7 @@ class ViewController: UIViewController {
             Alert.shared.alertDisplay = .emptyListOfIngredient
             self.toggleActivityIndicator(shown: false)
         } else {
-            
+            print("jeudi du jedi")
             NetworkingClient.shared.search(with: listOfIngredientsArray){ (success, returnlistOfRecipes) in
                 self.toggleActivityIndicator(shown: false)
                 if returnlistOfRecipes != nil {
@@ -69,6 +69,7 @@ class ViewController: UIViewController {
                     }
                     self.performSegue(withIdentifier: "goList", sender: self)
                 } else {
+                     print("jeudi du jedi 2")
                     Alert.shared.controller = self
                     Alert.shared.alertDisplay = .requestCrash
                 }

@@ -12,6 +12,7 @@ import SafariServices
 class RecipeDetailViewController: UIViewController {
 
     var recipe: MyRecipe!
+    var star = false
     
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var recipeDescription: UILabel!
@@ -41,6 +42,9 @@ class RecipeDetailViewController: UIViewController {
     }
     
     private func setupScreen(){
+        if star {
+            favoriteStar.setImage(UIImage(named: "favoriteSelected"), for: .normal)
+        }
         name.text = recipe.name
         var text = ""
         for item in recipe.ingredient {
@@ -92,10 +96,12 @@ class RecipeDetailViewController: UIViewController {
     private func favoriteSwitch(){
         if favoriteStar.currentImage == UIImage(imageLiteralResourceName: "favoriteNotSelected") {
             favoriteStar.setImage(UIImage(named: "favoriteSelected"), for: .normal)
+            star = true
             saveToFavorite(recipe: recipe)
             //Todo add in favorite
         } else {
             favoriteStar.setImage(UIImage(named: "favoriteNotSelected"), for: .normal)
+            star = false
             //Todo remove from favorite
         }
     }
@@ -107,8 +113,6 @@ class RecipeDetailViewController: UIViewController {
         savedRecipe.urlRecipeDetails = recipe.urlRecipeDetail
         savedRecipe.ingredient = recipe.ingredient
         savedRecipe.cookingTime = Int16(recipe.cookingTime)
-        let saveFavorite = CoreFavorite(context: AppDelegate.viewContext)
-        saveFavorite.myFavorite?.append(savedRecipe)
         try? AppDelegate.viewContext.save()
         
     }

@@ -23,7 +23,6 @@
 		C1C1CAC422A0379E0020877E /* APIKeys.plist in Resources */ = {isa = PBXBuildFile; fileRef = C1C1CAC322A0379E0020877E /* APIKeys.plist */; };
 		C1C1CAC622A038630020877E /* APIKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1C1CAC522A038630020877E /* APIKeys.swift */; };
 		C1C1CAC822A03D730020877E /* CoreRecipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1C1CAC722A03D730020877E /* CoreRecipe.swift */; };
-		C1C1CACA22A03E220020877E /* CoreFavorite.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1C1CAC922A03E220020877E /* CoreFavorite.swift */; };
 		C1C1CACC22A0448D0020877E /* FavoriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1C1CACB22A0448D0020877E /* FavoriteViewController.swift */; };
 		C1C1CACE22A044ED0020877E /* FavoriteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1C1CACD22A044ED0020877E /* FavoriteTableViewCell.swift */; };
 		C1C8FBB1229D2944006EB7D8 /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1C8FBB0229D2944006EB7D8 /* Recipe.swift */; };
@@ -65,7 +64,6 @@
 		C1C1CAC322A0379E0020877E /* APIKeys.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = APIKeys.plist; sourceTree = "<group>"; };
 		C1C1CAC522A038630020877E /* APIKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKeys.swift; sourceTree = "<group>"; };
 		C1C1CAC722A03D730020877E /* CoreRecipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreRecipe.swift; sourceTree = "<group>"; };
-		C1C1CAC922A03E220020877E /* CoreFavorite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreFavorite.swift; sourceTree = "<group>"; };
 		C1C1CACB22A0448D0020877E /* FavoriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteViewController.swift; sourceTree = "<group>"; };
 		C1C1CACD22A044ED0020877E /* FavoriteTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteTableViewCell.swift; sourceTree = "<group>"; };
 		C1C8FBB0229D2944006EB7D8 /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
@@ -166,7 +164,6 @@
 				C170A97222A004DB00AD2928 /* Alert.swift */,
 				C138387F229BFF9F0018C625 /* XellissimeRecipe.xcdatamodeld */,
 				C1C1CAC722A03D730020877E /* CoreRecipe.swift */,
-				C1C1CAC922A03E220020877E /* CoreFavorite.swift */,
 				C1AC04FE229D095E0079C53E /* NetworkingClient.swift */,
 				C138389B229C016F0018C625 /* Settings.swift */,
 				C1C8FBB0229D2944006EB7D8 /* Recipe.swift */,
@@ -379,7 +376,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C1C1CACA22A03E220020877E /* CoreFavorite.swift in Sources */,
 				C1C1CAC622A038630020877E /* APIKeys.swift in Sources */,
 				C1E94E88229EB9D600468D47 /* ListRecipesViewController.swift in Sources */,
 				C1C8FBB1229D2944006EB7D8 /* Recipe.swift in Sources */,

@@ -274,7 +274,7 @@
         <!--Recipe Detail View Controller-->
         <scene sceneID="YdM-nb-9fM">
             <objects>
-                <viewController id="2wO-co-cV9" customClass="RecipeDetailViewController" customModule="XellissimeRecipe" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController useStoryboardIdentifierAsRestorationIdentifier="YES" id="2wO-co-cV9" customClass="RecipeDetailViewController" customModule="XellissimeRecipe" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="d4H-pn-d9U">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -402,14 +402,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="SUa-jd-gSa">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="SUa-jd-gSa">
                                 <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="FavoriteCell" rowHeight="394" id="Ev8-2l-KZh" customClass="FavoriteTableViewCell" customModule="XellissimeRecipe" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="394"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Ev8-2l-KZh" id="K2J-9k-NXT" customClass="FavoriteTableViewCell" customModule="XellissimeRecipe" customModuleProvider="target">
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Ev8-2l-KZh" id="K2J-9k-NXT">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="393.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
@@ -432,7 +433,7 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0Me-dy-h0A">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0Me-dy-h0A">
                                                     <rect key="frame" x="116" y="73.5" width="270" height="301.5"/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleCaption2"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -455,27 +456,28 @@
                                                 <constraint firstAttribute="trailingMargin" secondItem="YZw-Uz-bgj" secondAttribute="trailing" constant="8" id="lxM-mO-k8j"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.93982261420000002" green="0.60410839319999998" blue="0.2900769413" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <connections>
                                             <outlet property="recipeCookingTime" destination="YZw-Uz-bgj" id="Caa-gH-qEX"/>
                                             <outlet property="recipeImage" destination="c52-F8-t5X" id="Zhh-Fs-hwr"/>
+                                            <outlet property="recipeIngredient" destination="0Me-dy-h0A" id="ZuV-in-A6G"/>
                                             <outlet property="recipeName" destination="14B-JS-ubH" id="GXr-Og-H3G"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="HeM-H4-cfU" id="Scr-Bb-Hyp"/>
+                                    <outlet property="delegate" destination="HeM-H4-cfU" id="wY4-qc-iKz"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="XpG-vw-EED" firstAttribute="bottom" secondItem="SUa-jd-gSa" secondAttribute="bottom" id="LNq-ry-u3y"/>
-                            <constraint firstItem="SUa-jd-gSa" firstAttribute="top" secondItem="XpG-vw-EED" secondAttribute="top" id="NTY-Jk-6YZ"/>
-                            <constraint firstItem="XpG-vw-EED" firstAttribute="trailing" secondItem="SUa-jd-gSa" secondAttribute="trailing" id="ZGb-XG-2pN"/>
-                            <constraint firstItem="SUa-jd-gSa" firstAttribute="leading" secondItem="XpG-vw-EED" secondAttribute="leading" id="nib-Xp-r4Y"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="XpG-vw-EED"/>
                     </view>
                     <navigationItem key="navigationItem" title="XellissimeRecipe" id="ywC-PZ-2ce"/>
                     <connections>
                         <outlet property="tableView" destination="SUa-jd-gSa" id="d0g-F8-Sua"/>
+                        <segue destination="2wO-co-cV9" kind="show" identifier="favoriteDetail" id="bj7-O6-A06"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LGe-VG-Oe3" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -486,4 +488,7 @@
     <resources>
         <image name="favoriteNotSelected" width="30" height="28"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="bj7-O6-A06"/>
+    </inferredMetricsTieBreakers>
 </document>

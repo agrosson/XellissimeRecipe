@@ -12,3 +12,4 @@ import CoreData
 class CoreRecipe: NSManagedObject {
     
 }
+

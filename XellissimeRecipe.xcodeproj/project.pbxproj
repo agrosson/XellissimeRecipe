@@ -232,6 +232,7 @@
 				C1383888229BFFA00018C625 /* Sources */,
 				C1383889229BFFA00018C625 /* Frameworks */,
 				C138388A229BFFA00018C625 /* Resources */,
+				416C76C151C21E1B15F7F227 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -303,6 +304,28 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		416C76C151C21E1B15F7F227 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-XellissimeRecipeTests/Pods-XellissimeRecipeTests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-XellissimeRecipeTests/Pods-XellissimeRecipeTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		87FFB4636966EA911A9B1D54 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;

@@ -58,7 +58,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bgl-BA-0Wu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1167" y="-1347"/>
+            <point key="canvasLocation" x="-1209" y="-1408"/>
         </scene>
         <!--XellissimeRecipe-->
         <scene sceneID="wFz-DB-3Yy">
@@ -286,7 +286,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Lur-Mx-rx5">
-                                <rect key="frame" x="8" y="571.5" width="398" height="148.5"/>
+                                <rect key="frame" x="8" y="571.5" width="398" height="104.5"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -298,7 +298,7 @@
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jLB-re-n6l">
-                                <rect key="frame" x="8" y="740" width="398" height="48"/>
+                                <rect key="frame" x="8" y="696" width="398" height="48"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
                                 <state key="normal" title="See Recipe">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -352,6 +352,10 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Kgk-ff-rZh"/>
                     </view>
+                    <toolbarItems>
+                        <barButtonItem title="Item" id="AYk-bG-OwT"/>
+                    </toolbarItems>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="durationLabel" destination="rI0-2D-lGJ" id="3oX-dv-OO3"/>
                         <outlet property="favoriteStar" destination="aDe-Zp-1fH" id="ZsV-z0-nJk"/>
@@ -363,7 +367,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="y1I-aK-CoR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1304" y="-1409"/>
+            <point key="canvasLocation" x="1441" y="-1392"/>
         </scene>
         <!--Favorite-->
         <scene sceneID="hsv-0c-X6y">

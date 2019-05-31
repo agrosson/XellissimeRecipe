@@ -21,7 +21,7 @@ class MyRecipe {
         self.name = name
     }
 }
-
+/*
 // MARK: - RecipeResponse
 class RecipeResponse: Codable {
     let q: String?
@@ -192,3 +192,4 @@ class Params: Codable {
         self.appID = appID
     }
 }
+*/

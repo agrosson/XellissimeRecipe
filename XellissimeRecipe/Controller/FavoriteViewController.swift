@@ -12,18 +12,19 @@ import CoreData
 class FavoriteViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
-    var myFavorites = CoreRecipe.all
+    //var myFavorites = CoreRecipe.all
     
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.estimatedRowHeight = tableView.rowHeight
         tableView.rowHeight = UITableView.automaticDimension
         tableView.reloadData()
-        myFavorites = CoreRecipe.all
+        //CoreRecipe.all
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        myFavorites = CoreRecipe.all
+       // CoreRecipe.all
+        //print("nombre de favoris \(myFavorites.count)")
         tableView.estimatedRowHeight = tableView.rowHeight
         tableView.rowHeight = UITableView.automaticDimension
         tableView.reloadData()
@@ -36,14 +37,14 @@ extension FavoriteViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return myFavorites.count
+        return CoreRecipe.all.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell =  tableView.dequeueReusableCell(withIdentifier: "FavoriteCell", for: indexPath) as? FavoriteTableViewCell else {
             return UITableViewCell()}
         
-        let recipe = myFavorites[indexPath.row]
+        let recipe = CoreRecipe.all[indexPath.row]
         guard let name = recipe.name else {return UITableViewCell()}
         print("on est dans la cellule name \(name)")
         guard let urlPhoto = recipe.urlPhoto else {return UITableViewCell()}
@@ -62,18 +63,16 @@ extension FavoriteViewController: UITableViewDataSource {
 extension FavoriteViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        performSegue(withIdentifier: "favoriteDetail", sender: self)
-        
-        //RecipeDetailViewController
+        print("le nombre de favoris dans core Data est de \(CoreRecipe.all.count)")
+        if CoreRecipe.all.count > 0 {
+             performSegue(withIdentifier: "favoriteDetail", sender: self)
+        }
     }
-    
-    
-    // showRecipeDetail
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // check the segue name
         // si la destination est le VC DetailViewController, and set the index from the selected item
         if let dest = segue.destination as? RecipeDetailViewController, let row = tableView.indexPathForSelectedRow?.row {
-            let recipe = myFavorites[row]
+            let recipe = CoreRecipe.all[row]
             guard let name = recipe.name else {return}
             guard let urlPhoto = recipe.urlPhoto else {return}
             let cookingTime = Int(recipe.cookingTime)
@@ -87,6 +86,7 @@ extension FavoriteViewController: UITableViewDelegate {
             let star = true
             dest.recipe = myRecipe
             dest.star = star
+            dest.coreRecipe = recipe
         }
     }
     

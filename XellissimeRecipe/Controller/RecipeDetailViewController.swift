@@ -8,9 +8,11 @@
 
 import UIKit
 import SafariServices
+import CoreData
 
 class RecipeDetailViewController: UIViewController {
-
+    
+    var coreRecipe:CoreRecipe!
     var recipe: MyRecipe!
     var star = false
     
@@ -98,12 +100,11 @@ class RecipeDetailViewController: UIViewController {
             favoriteStar.setImage(UIImage(named: "favoriteSelected"), for: .normal)
             star = true
             saveToFavorite(recipe: recipe)
-            //Todo add in favorite
         } else {
             favoriteStar.setImage(UIImage(named: "favoriteNotSelected"), for: .normal)
         //    CoreRecipe.delete(recipe)
             star = false
-            //Todo remove from favorite
+           removeFromFavorite()
         }
     }
     
@@ -116,6 +117,17 @@ class RecipeDetailViewController: UIViewController {
         savedRecipe.cookingTime = Int16(recipe.cookingTime)
         try? AppDelegate.viewContext.save()
         
+    }
+    
+    private func removeFromFavorite(){
+//        var deletedRecipe = CoreRecipe(context: AppDelegate.viewContext)
+//        guard let deletedItem = coreRecipe else {
+//            print("buggggg ")
+//            return
+//        }
+      //  deletedRecipe = deletedItem
+        AppDelegate.viewContext.delete(coreRecipe)
+        try? AppDelegate.viewContext.save()
     }
     
 }

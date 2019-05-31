@@ -101,6 +101,7 @@ class RecipeDetailViewController: UIViewController {
             //Todo add in favorite
         } else {
             favoriteStar.setImage(UIImage(named: "favoriteNotSelected"), for: .normal)
+        //    CoreRecipe.delete(recipe)
             star = false
             //Todo remove from favorite
         }

@@ -16,5 +16,10 @@ class CoreRecipe: NSManagedObject {
         guard let favorites = try? AppDelegate.viewContext.fetch(request) else {return []}
         return favorites
     }
+    static func delete(_ thisRecipe: CoreRecipe){
+        AppDelegate.viewContext.delete(thisRecipe)
+        try? AppDelegate.viewContext.save()
+    }
 }
+
 

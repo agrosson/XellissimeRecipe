@@ -19,15 +19,11 @@ class FavoriteViewController: UIViewController {
         tableView.estimatedRowHeight = tableView.rowHeight
         tableView.rowHeight = UITableView.automaticDimension
         tableView.reloadData()
+        myFavorites = CoreRecipe.all
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        print("nombre de favoris \(myFavorites.count)")
-        if myFavorites.count >  0 {
-            for item in myFavorites {
-                print(" voici les élements de la recette\n\(String(describing: item.name))\n\(item.cookingTime)\n\(String(describing: item.urlPhoto))\n\(String(describing: item.urlRecipeDetails))")
-            }
-        }
+        myFavorites = CoreRecipe.all
         tableView.estimatedRowHeight = tableView.rowHeight
         tableView.rowHeight = UITableView.automaticDimension
         tableView.reloadData()
@@ -45,7 +41,6 @@ extension FavoriteViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell =  tableView.dequeueReusableCell(withIdentifier: "FavoriteCell", for: indexPath) as? FavoriteTableViewCell else {
-              print("on est dans la cellule y a un soucis?")
             return UITableViewCell()}
         
         let recipe = myFavorites[indexPath.row]

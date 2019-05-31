@@ -313,23 +313,9 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aDe-Zp-1fH">
-                                <rect key="frame" x="344" y="128" width="30" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="30" id="OJY-fC-MeH"/>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="R2t-q1-Ief"/>
-                                </constraints>
-                                <state key="normal" image="favoriteNotSelected">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <action selector="favoriteIsPressed:" destination="2wO-co-cV9" eventType="touchUpInside" id="XAD-3D-xhS"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.93982261420000002" green="0.60410839319999998" blue="0.2900769413" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
-                            <constraint firstItem="msR-1T-soT" firstAttribute="top" secondItem="aDe-Zp-1fH" secondAttribute="top" constant="-20" id="0af-aK-POU"/>
                             <constraint firstItem="Kgk-ff-rZh" firstAttribute="trailing" secondItem="Lur-Mx-rx5" secondAttribute="trailing" constant="8" id="0l2-1w-pmc"/>
                             <constraint firstItem="Lur-Mx-rx5" firstAttribute="leading" secondItem="Kgk-ff-rZh" secondAttribute="leading" constant="8" id="46c-iL-oDs"/>
                             <constraint firstItem="jLB-re-n6l" firstAttribute="top" secondItem="Lur-Mx-rx5" secondAttribute="bottom" priority="999" constant="20" id="5zO-hg-giC"/>
@@ -338,7 +324,6 @@
                             <constraint firstItem="rI0-2D-lGJ" firstAttribute="top" secondItem="EJe-w6-pXI" secondAttribute="bottom" constant="10" id="GBy-Oa-5IO"/>
                             <constraint firstItem="Kgk-ff-rZh" firstAttribute="trailing" secondItem="msR-1T-soT" secondAttribute="trailing" priority="999" constant="20" id="GjC-V1-ifL"/>
                             <constraint firstItem="EJe-w6-pXI" firstAttribute="top" secondItem="msR-1T-soT" secondAttribute="bottom" constant="20" id="Lwb-rI-Bwx"/>
-                            <constraint firstItem="aDe-Zp-1fH" firstAttribute="trailing" secondItem="msR-1T-soT" secondAttribute="trailing" priority="999" constant="-20" id="Q1z-QB-6i5"/>
                             <constraint firstItem="msR-1T-soT" firstAttribute="top" secondItem="Kgk-ff-rZh" secondAttribute="top" priority="999" constant="20" id="SSY-R5-W3k"/>
                             <constraint firstItem="Kgk-ff-rZh" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="EJe-w6-pXI" secondAttribute="trailing" priority="999" constant="20" id="V2K-2y-TMK"/>
                             <constraint firstItem="rI0-2D-lGJ" firstAttribute="leading" secondItem="Kgk-ff-rZh" secondAttribute="leading" constant="8" id="dvH-VB-GWp"/>
@@ -348,24 +333,22 @@
                             <constraint firstItem="EJe-w6-pXI" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Kgk-ff-rZh" secondAttribute="leading" priority="999" constant="20" id="nC1-fW-A69"/>
                             <constraint firstItem="Kgk-ff-rZh" firstAttribute="trailing" secondItem="jLB-re-n6l" secondAttribute="trailing" constant="8" id="ofr-6v-gbu"/>
                             <constraint firstItem="jLB-re-n6l" firstAttribute="leading" secondItem="Kgk-ff-rZh" secondAttribute="leading" constant="8" id="sxe-I4-DH7"/>
-                            <constraint firstItem="aDe-Zp-1fH" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="msR-1T-soT" secondAttribute="leading" constant="20" id="xX4-CO-zPg"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Kgk-ff-rZh"/>
                     </view>
-                    <toolbarItems>
-                        <barButtonItem title="Item" id="AYk-bG-OwT"/>
-                    </toolbarItems>
+                    <toolbarItems/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="durationLabel" destination="rI0-2D-lGJ" id="3oX-dv-OO3"/>
-                        <outlet property="favoriteStar" destination="aDe-Zp-1fH" id="ZsV-z0-nJk"/>
                         <outlet property="name" destination="EJe-w6-pXI" id="RRa-6j-ozs"/>
                         <outlet property="recipeDescription" destination="Lur-Mx-rx5" id="TsH-AE-0MS"/>
                         <outlet property="recipeOnSafari" destination="jLB-re-n6l" id="Gex-Av-3PD"/>
                         <outlet property="recipePicture" destination="msR-1T-soT" id="hZO-mq-0Pt"/>
+                        <segue destination="b10-RI-9e3" kind="unwind" identifier="backToFavorite" unwindAction="backToFavoriteWithSegue:" id="tr0-DI-kjf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="y1I-aK-CoR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="b10-RI-9e3" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1441" y="-1392"/>
         </scene>
@@ -489,9 +472,6 @@
             <point key="canvasLocation" x="99" y="-606"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="favoriteNotSelected" width="30" height="28"/>
-    </resources>
     <inferredMetricsTieBreakers>
         <segue reference="bj7-O6-A06"/>
     </inferredMetricsTieBreakers>

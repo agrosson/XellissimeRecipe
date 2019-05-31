@@ -10,21 +10,19 @@ import UIKit
 import CoreData
 
 class FavoriteViewController: UIViewController {
-
+    
     @IBOutlet weak var tableView: UITableView!
     //var myFavorites = CoreRecipe.all
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.estimatedRowHeight = tableView.rowHeight
-        tableView.rowHeight = UITableView.automaticDimension
-        tableView.reloadData()
-        //CoreRecipe.all
+        updateView()
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-       // CoreRecipe.all
-        //print("nombre de favoris \(myFavorites.count)")
+        updateView()
+    }
+    fileprivate func updateView() {
         tableView.estimatedRowHeight = tableView.rowHeight
         tableView.rowHeight = UITableView.automaticDimension
         tableView.reloadData()
@@ -41,31 +39,26 @@ extension FavoriteViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell =  tableView.dequeueReusableCell(withIdentifier: "FavoriteCell", for: indexPath) as? FavoriteTableViewCell else {
-            return UITableViewCell()}
-        
+        guard let cell =  tableView.dequeueReusableCell(withIdentifier: "FavoriteCell",
+                                                        for: indexPath) as? FavoriteTableViewCell
+            else {return UITableViewCell()}
         let recipe = CoreRecipe.all[indexPath.row]
         guard let name = recipe.name else {return UITableViewCell()}
-        print("on est dans la cellule name \(name)")
         guard let urlPhoto = recipe.urlPhoto else {return UITableViewCell()}
-        print("on est dans la cellule urlPhoto \(urlPhoto)")
-        let cookingTime = Int(recipe.cookingTime) //else {return UITableViewCell()}
-        print("on est dans la cellule cookingTime \(cookingTime)")
+        let cookingTime = Int(recipe.cookingTime)
         guard let ingredient = recipe.ingredient else {return UITableViewCell()}
-        print("on est dans la cellule ingredient \(ingredient)")
-        
         cell.configure(withImage: urlPhoto, name: name, time: cookingTime, ingredients: ingredient)
         return cell
     }
     
-  
+    
 }
 extension FavoriteViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("le nombre de favoris dans core Data est de \(CoreRecipe.all.count)")
         if CoreRecipe.all.count > 0 {
-             performSegue(withIdentifier: "favoriteDetail", sender: self)
+            performSegue(withIdentifier: "favoriteDetail", sender: self)
         }
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -89,6 +82,8 @@ extension FavoriteViewController: UITableViewDelegate {
             dest.coreRecipe = recipe
         }
     }
-    
+    @IBAction func backToFavorite(segue: UIStoryboardSegue){
+        
+    }
     
 }

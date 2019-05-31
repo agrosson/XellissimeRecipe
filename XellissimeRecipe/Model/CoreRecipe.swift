@@ -20,6 +20,16 @@ class CoreRecipe: NSManagedObject {
         AppDelegate.viewContext.delete(thisRecipe)
         try? AppDelegate.viewContext.save()
     }
+    static func saveToFavorite(recipe: MyRecipe){
+        let savedRecipe = CoreRecipe(context: AppDelegate.viewContext)
+        savedRecipe.name = recipe.name
+        savedRecipe.urlPhoto = recipe.urlPhoto
+        savedRecipe.urlRecipeDetails = recipe.urlRecipeDetail
+        savedRecipe.ingredient = recipe.ingredient
+        savedRecipe.cookingTime = Int16(recipe.cookingTime)
+        try? AppDelegate.viewContext.save()
+        
+    }
 }
 
 

@@ -27,18 +27,13 @@ class ViewController: UIViewController {
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     var listOfIngredientsArray = [String]()
-    var testListRecipe = [MyRecipe]()
-    
+ //   var testListRecipe = [MyRecipe]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Set the navigationBar transparent
-        //navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
-        //navigationController?.navigationBar.shadowImage = UIImage(named: "fork")
         activityIndicator.isHidden = true
         setUpPage()
         listOfIngredientsTextView.isEditable = false
-        
     }
     // MARK: - Actions
     
@@ -73,7 +68,6 @@ class ViewController: UIViewController {
                 }
             }
         }
-
     }
     
     // MARK: - Methods

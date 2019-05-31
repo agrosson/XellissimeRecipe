@@ -20,32 +20,56 @@ class RecipeDetailViewController: UIViewController {
     @IBOutlet weak var recipeDescription: UILabel!
     
     @IBOutlet weak var durationLabel: UILabel!
-    @IBOutlet weak var favoriteStar: UIButton!
+  //  @IBOutlet weak var favoriteStar: UIButton!
     
     @IBOutlet weak var recipePicture: UIImageView!
     
     @IBOutlet weak var recipeOnSafari: UIButton!
     
-    @IBAction func favoriteIsPressed(_ sender: UIButton) {
-        favoriteSwitch()
-    }
+  //  @IBAction func favoriteIsPressed(_ sender: UIButton) {
+   //     favoriteSwitch()
+ //   }
     
     @IBAction func seeRecipeIsPressed(_ sender: Any) {
         showSafariVC(for: recipe.urlRecipeDetail)
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "fork"), style: .plain, target: self, action: #selector(favoriteTapped))
+       // navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Add", style: .plain, target: self, action: #selector(favoriteTapped))
         setupScreen()
     }
-
+    
+    @objc func favoriteTapped(){
+        favoriteSwitch()
+        performSegue(withIdentifier: "backToFavorite", sender: self)
+    }
+    
+    private func favoriteSwitch(){
+       // guard let starup = starup else {return}
+        if  navigationItem.rightBarButtonItem!.image == UIImage(imageLiteralResourceName: "fork") {
+            navigationItem.rightBarButtonItem!.image = UIImage(named: "favoriteSelected")
+            star = true
+            CoreRecipe.saveToFavorite(recipe: recipe)
+        } else {
+            navigationItem.rightBarButtonItem!.image = UIImage(named: "fork")
+            star = false
+            removeFromFavorite()
+        }
+    }
+ 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         setupScreen()
     }
     
     private func setupScreen(){
+        if CoreRecipe.all.count < 1 {
+            navigationItem.rightBarButtonItem!.image = UIImage(named: "fork")
+        }
+        
         if star {
-            favoriteStar.setImage(UIImage(named: "favoriteSelected"), for: .normal)
+            navigationItem.rightBarButtonItem!.image = UIImage(named: "favoriteSelected")
         }
         name.text = recipe.name
         var text = ""
@@ -94,40 +118,10 @@ class RecipeDetailViewController: UIViewController {
         present(safariVC, animated: true, completion: nil)
         
     }
-    
-    private func favoriteSwitch(){
-        if favoriteStar.currentImage == UIImage(imageLiteralResourceName: "favoriteNotSelected") {
-            favoriteStar.setImage(UIImage(named: "favoriteSelected"), for: .normal)
-            star = true
-            saveToFavorite(recipe: recipe)
-        } else {
-            favoriteStar.setImage(UIImage(named: "favoriteNotSelected"), for: .normal)
-        //    CoreRecipe.delete(recipe)
-            star = false
-           removeFromFavorite()
+    private func removeFromFavorite(){
+        if CoreRecipe.all.count > 0 {
+            AppDelegate.viewContext.delete(coreRecipe)
+            try? AppDelegate.viewContext.save()
         }
     }
-    
-    private func saveToFavorite(recipe: MyRecipe){
-        let savedRecipe = CoreRecipe(context: AppDelegate.viewContext)
-        savedRecipe.name = recipe.name
-        savedRecipe.urlPhoto = recipe.urlPhoto
-        savedRecipe.urlRecipeDetails = recipe.urlRecipeDetail
-        savedRecipe.ingredient = recipe.ingredient
-        savedRecipe.cookingTime = Int16(recipe.cookingTime)
-        try? AppDelegate.viewContext.save()
-        
-    }
-    
-    private func removeFromFavorite(){
-//        var deletedRecipe = CoreRecipe(context: AppDelegate.viewContext)
-//        guard let deletedItem = coreRecipe else {
-//            print("buggggg ")
-//            return
-//        }
-      //  deletedRecipe = deletedItem
-        AppDelegate.viewContext.delete(coreRecipe)
-        try? AppDelegate.viewContext.save()
-    }
-    
 }

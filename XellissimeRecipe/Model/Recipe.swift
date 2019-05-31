@@ -20,6 +20,8 @@ class MyRecipe {
     init(name: String) {
         self.name = name
     }
+    
+    
 }
 /*
 // MARK: - RecipeResponse

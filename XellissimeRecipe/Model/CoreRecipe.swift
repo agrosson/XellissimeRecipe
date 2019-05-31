@@ -11,5 +11,10 @@ import CoreData
 
 class CoreRecipe: NSManagedObject {
     
+    static var all :[CoreRecipe] {
+        let request: NSFetchRequest<CoreRecipe> = CoreRecipe.fetchRequest()
+        guard let favorites = try? AppDelegate.viewContext.fetch(request) else {return []}
+        return favorites
+    }
 }
 

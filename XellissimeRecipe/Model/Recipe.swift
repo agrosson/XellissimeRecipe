@@ -11,23 +11,16 @@ import Foundation
 
 var listOfRecipes = [MyRecipe]()
 
-class Favorite {
-    var myFavorite = [MyRecipe]()
-}
-
 class MyRecipe {
-    
     var name : String
     var urlPhoto = String()
     var urlRecipeDetail = String()
     var ingredient = [String]()
     var cookingTime = Int()
-    
     init(name: String) {
         self.name = name
     }
 }
-
 
 // MARK: - RecipeResponse
 class RecipeResponse: Codable {

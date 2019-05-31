@@ -12,34 +12,19 @@ import CoreData
 class FavoriteViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
-    var tempFavorite = [CoreRecipe]()
+    var myFavorites = CoreRecipe.all
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // Retrieve object
-        
-        let request: NSFetchRequest<CoreRecipe> = CoreRecipe.fetchRequest()
-        guard let favorites = try? AppDelegate.viewContext.fetch(request) else {return}
-        tempFavorite = favorites
-        print("nombre de favoris \(tempFavorite.count)")
-        if tempFavorite.count >  0 {
-            for item in tempFavorite {
-                print(" voici les élements de la recette\n\(String(describing: item.name))\n\(item.cookingTime)\n\(String(describing: item.urlPhoto))\n\(String(describing: item.urlRecipeDetails))")
-            }
-        }
         tableView.estimatedRowHeight = tableView.rowHeight
         tableView.rowHeight = UITableView.automaticDimension
         tableView.reloadData()
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        let request: NSFetchRequest<CoreRecipe> = CoreRecipe.fetchRequest()
-        guard let favorites = try? AppDelegate.viewContext.fetch(request) else {return}
-        tempFavorite = favorites
-        print("nombre de favoris \(tempFavorite.count)")
-        if tempFavorite.count >  0 {
-            for item in tempFavorite {
+        print("nombre de favoris \(myFavorites.count)")
+        if myFavorites.count >  0 {
+            for item in myFavorites {
                 print(" voici les élements de la recette\n\(String(describing: item.name))\n\(item.cookingTime)\n\(String(describing: item.urlPhoto))\n\(String(describing: item.urlRecipeDetails))")
             }
         }
@@ -55,7 +40,7 @@ extension FavoriteViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return tempFavorite.count
+        return myFavorites.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -63,7 +48,7 @@ extension FavoriteViewController: UITableViewDataSource {
               print("on est dans la cellule y a un soucis?")
             return UITableViewCell()}
         
-        let recipe = tempFavorite[indexPath.row]
+        let recipe = myFavorites[indexPath.row]
         guard let name = recipe.name else {return UITableViewCell()}
         print("on est dans la cellule name \(name)")
         guard let urlPhoto = recipe.urlPhoto else {return UITableViewCell()}
@@ -93,7 +78,7 @@ extension FavoriteViewController: UITableViewDelegate {
         // check the segue name
         // si la destination est le VC DetailViewController, and set the index from the selected item
         if let dest = segue.destination as? RecipeDetailViewController, let row = tableView.indexPathForSelectedRow?.row {
-            let recipe = tempFavorite[row]
+            let recipe = myFavorites[row]
             guard let name = recipe.name else {return}
             guard let urlPhoto = recipe.urlPhoto else {return}
             let cookingTime = Int(recipe.cookingTime)

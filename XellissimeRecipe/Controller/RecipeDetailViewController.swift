@@ -31,21 +31,28 @@ class RecipeDetailViewController: UIViewController {
     @IBOutlet weak var recipePicture: UIImageView!
     // MARK: - Outlets - UIButton
     @IBOutlet weak var recipeOnSafari: UIButton!
-
-    
-    @IBAction func seeRecipeIsPressed(_ sender: Any) {
-        showSafariVC(for: recipe.urlRecipeDetail)
-    }
+    // MARK: - Methods - viewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "fork"), style: .plain, target: self, action: #selector(favoriteTapped))
        // navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Add", style: .plain, target: self, action: #selector(favoriteTapped))
         setupScreen()
     }
-    
+    // MARK: - Actions
+    /**
+     Action that opens Safari and displays recipe directions on Internet
+     */
+    @IBAction func seeRecipeIsPressed(_ sender: Any) {
+        showSafariVC(for: recipe.urlRecipeDetail)
+    }
+    /**
+     Function that executes favoriteSwitch() and displays list of favorites if recipe set to favorite
+     */
     @objc func favoriteTapped(){
         favoriteSwitch()
-        performSegue(withIdentifier: "backToFavorite", sender: self)
+        if navigationItem.rightBarButtonItem!.image == UIImage(imageLiteralResourceName: "favoriteSelected") {
+            performSegue(withIdentifier: "backToFavorite", sender: self)
+        }
     }
     
     private func favoriteSwitch(){

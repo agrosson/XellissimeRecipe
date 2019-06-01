@@ -154,6 +154,12 @@ class ViewController: UIViewController {
     @objc private func myTap() {
         ingredientsTextField.resignFirstResponder()
     }
+    
+    /**
+     UnWind segue target to current VC
+     */
+    @IBAction func backToMenu(segue: UIStoryboardSegue){
+    }
 }
 
 // MARK: - Extension

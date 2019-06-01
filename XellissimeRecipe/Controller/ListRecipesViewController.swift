@@ -14,8 +14,8 @@ class ListRecipesViewController: UIViewController  {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        tableView.estimatedRowHeight = tableView.rowHeight
-        tableView.rowHeight = UITableView.automaticDimension
+        //   tableView.estimatedRowHeight = tableView.rowHeight
+        //tableView.rowHeight = UITableView.automaticDimension
         tableView.reloadData()
     }
     

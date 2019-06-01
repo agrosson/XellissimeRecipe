@@ -16,9 +16,9 @@ import CoreData
  This class displays the detail of a recipe
  */
 class RecipeDetailViewController: UIViewController {
-     // MARK: - Properties
+    // MARK: - Properties
     /// Recipe object of type CoreRecipe - recipe tagged as a favorite recipe
-    var coreRecipe: CoreRecipe!
+    var coreRecipe: CoreRecipe?
     /// Recipe object of type MyRecipe
     var recipe: MyRecipe!
     /// Variable to track if recipe is tagged as favorite
@@ -35,7 +35,7 @@ class RecipeDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "fork"), style: .plain, target: self, action: #selector(favoriteTapped))
-       // navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Add", style: .plain, target: self, action: #selector(favoriteTapped))
+        // navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Add", style: .plain, target: self, action: #selector(favoriteTapped))
         setupScreen()
     }
     // MARK: - Actions
@@ -50,29 +50,44 @@ class RecipeDetailViewController: UIViewController {
      */
     @objc func favoriteTapped(){
         favoriteSwitch()
-        if navigationItem.rightBarButtonItem!.image == UIImage(imageLiteralResourceName: "favoriteSelected") {
-            performSegue(withIdentifier: "backToFavorite", sender: self)
-        }
+       
     }
     
     private func favoriteSwitch(){
         if  navigationItem.rightBarButtonItem!.image == UIImage(imageLiteralResourceName: "fork") {
             navigationItem.rightBarButtonItem!.image = UIImage(named: "favoriteSelected")
             star = true
-            CoreRecipe.saveToFavorite(recipe: recipe)
+            //ici test si doublon
+            let name = recipe.name
+            print(name)
+            var counter = 0
+            for recipe in CoreRecipe.all where recipe.name == name {
+                counter += 1
+            }
+            if counter > 0 {
+                print("attention doublon")
+            } else {
+                print("Nickel pas de doublon")
+                CoreRecipe.saveToFavorite(recipe: recipe)
+                performSegue(withIdentifier: "backToFavorite", sender: self)
+            }
         } else {
             navigationItem.rightBarButtonItem!.image = UIImage(named: "fork")
             star = false
-            CoreRecipe.removeFromFavorite(coreRecipe: coreRecipe)
+            if let coreRecipe = coreRecipe {
+                CoreRecipe.removeFromFavorite(coreRecipe: coreRecipe)
+            }
+             performSegue(withIdentifier: "backToFavorite", sender: self)
         }
     }
- 
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         setupScreen()
     }
     
     private func setupScreen(){
+        print("le nombre de favoris est de \(CoreRecipe.all.count)")
         if CoreRecipe.all.count < 1 {
             navigationItem.rightBarButtonItem!.image = UIImage(named: "fork")
         }
@@ -85,13 +100,13 @@ class RecipeDetailViewController: UIViewController {
             text += "\t\(item)\n"
         }
         recipeDescription.text = text
-       // recipePicture.adjustsImageSizeForAccessibilityContentSizeCategory = true
+        // recipePicture.adjustsImageSizeForAccessibilityContentSizeCategory = true
         
         recipePicture.translatesAutoresizingMaskIntoConstraints = false
         let width = UIScreen.main.bounds.width/8
         print("la largeur est de \(width)")
         //recipePicture.widthAnchor.constraint(equalToConstant: width).isActive = true
-       // recipePicture.heightAnchor.constraint(equalToConstant: width).isActive = true
+        // recipePicture.heightAnchor.constraint(equalToConstant: width).isActive = true
         recipePicture.leftAnchor.constraint(equalTo: view.leftAnchor, constant: width).isActive = true
         recipePicture.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -width).isActive = true
         var imageToDisplay : UIImage?

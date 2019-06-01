@@ -26,10 +26,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UITabBarItem.appearance().setTitleTextAttributes(navFontAttribute, for: .normal)
         UITabBarItem.appearance().setTitleTextAttributes(navFontAttribute, for: .highlighted)
         UINavigationBar.appearance().titleTextAttributes = navFontAttribute
-    
-        
-        
-
         return true
     }
 

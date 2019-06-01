@@ -22,20 +22,36 @@ class FavoriteViewController: UIViewController {
     // MARK: - ViewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
+        print("Bienvenu sur la liste des favoris. Le nombre de favoris est de \(CoreRecipe.all.count)")
+        testIfEmptyFavorite()
         updateView()
     }
     // MARK: - ViewWillAppear
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        print("Bienvenu sur la liste des favoris. Le nombre de favoris est de \(CoreRecipe.all.count)")
+        testIfEmptyFavorite()
         updateView()
     }
     // MARK: - Methods
+    private func testIfEmptyFavorite(){
+        if CoreRecipe.all.count == 0 {
+//            Alert.shared.controller = self
+//            Alert.shared.alertDisplay = .noFavorites
+            let actionSheet = UIAlertController(title: "Sorry", message: "No favorites", preferredStyle: .alert)
+            
+            actionSheet.addAction(UIAlertAction(title: "Search and click on forks to add to favorites", style: .cancel, handler: { (action: UIAlertAction) in
+                  self.performSegue(withIdentifier: "backToMenu", sender: self)
+            }))
+            self.present(actionSheet, animated: true, completion : nil)
+        }
+    }
     /**
      Function that updates views and reloads data for tableView
      */
     fileprivate func updateView() {
-        tableView.estimatedRowHeight = tableView.rowHeight
-        tableView.rowHeight = UITableView.automaticDimension
+        //tableView.estimatedRowHeight = tableView.rowHeight
+        //tableView.rowHeight = UITableView.automaticDimension
         tableView.reloadData()
     }
     /**

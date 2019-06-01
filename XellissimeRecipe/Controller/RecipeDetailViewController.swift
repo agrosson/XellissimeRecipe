@@ -46,7 +46,6 @@ class RecipeDetailViewController: UIViewController {
     }
     
     private func favoriteSwitch(){
-       // guard let starup = starup else {return}
         if  navigationItem.rightBarButtonItem!.image == UIImage(imageLiteralResourceName: "fork") {
             navigationItem.rightBarButtonItem!.image = UIImage(named: "favoriteSelected")
             star = true
@@ -54,7 +53,7 @@ class RecipeDetailViewController: UIViewController {
         } else {
             navigationItem.rightBarButtonItem!.image = UIImage(named: "fork")
             star = false
-            removeFromFavorite()
+            CoreRecipe.removeFromFavorite(coreRecipe: coreRecipe)
         }
     }
  
@@ -67,7 +66,6 @@ class RecipeDetailViewController: UIViewController {
         if CoreRecipe.all.count < 1 {
             navigationItem.rightBarButtonItem!.image = UIImage(named: "fork")
         }
-        
         if star {
             navigationItem.rightBarButtonItem!.image = UIImage(named: "favoriteSelected")
         }
@@ -117,11 +115,5 @@ class RecipeDetailViewController: UIViewController {
         let safariVC = SFSafariViewController(url: url)
         present(safariVC, animated: true, completion: nil)
         
-    }
-    private func removeFromFavorite(){
-        if CoreRecipe.all.count > 0 {
-            AppDelegate.viewContext.delete(coreRecipe)
-            try? AppDelegate.viewContext.save()
-        }
     }
 }

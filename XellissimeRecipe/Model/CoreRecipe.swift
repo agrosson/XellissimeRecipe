@@ -28,7 +28,12 @@ class CoreRecipe: NSManagedObject {
         savedRecipe.ingredient = recipe.ingredient
         savedRecipe.cookingTime = Int16(recipe.cookingTime)
         try? AppDelegate.viewContext.save()
-        
+    }
+    static func removeFromFavorite(coreRecipe: CoreRecipe){
+        if CoreRecipe.all.count > 0 {
+            AppDelegate.viewContext.delete(coreRecipe)
+            try? AppDelegate.viewContext.save()
+        }
     }
 }
 

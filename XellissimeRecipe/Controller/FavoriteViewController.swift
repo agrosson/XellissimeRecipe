@@ -9,40 +9,61 @@
 import UIKit
 import CoreData
 
+
+// MARK: - Class FavoriteViewController
+/**
+ This class displays the list of favorite recipes of user
+ */
 class FavoriteViewController: UIViewController {
-    
+    // MARK: - Outlets  tableView
+    /// TableView where recipes are displayed
     @IBOutlet weak var tableView: UITableView!
-    //var myFavorites = CoreRecipe.all
     
+    // MARK: - ViewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
         updateView()
     }
+    // MARK: - ViewWillAppear
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         updateView()
     }
+    // MARK: - Methods
+    /**
+     Function that updates views and reload data for tableView
+     */
     fileprivate func updateView() {
         tableView.estimatedRowHeight = tableView.rowHeight
         tableView.rowHeight = UITableView.automaticDimension
         tableView.reloadData()
     }
 }
-
+// MARK: - Extensions: protocole UITableViewDataSource
 extension FavoriteViewController: UITableViewDataSource {
+    /**
+     Function that indicates number of section in tableView
+     */
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
-    
+    /**
+     Function that indicates number of of rows in section in tableView
+     */
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return CoreRecipe.all.count
     }
-    
+    /**
+     Function that displays reusable cell in tableView
+     */
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        // create a cell of type FavoriteTableViewCell
         guard let cell =  tableView.dequeueReusableCell(withIdentifier: "FavoriteCell",
                                                         for: indexPath) as? FavoriteTableViewCell
             else {return UITableViewCell()}
+        // get the recipe from the Array "CoreRecipe.all" at index "indexPath.row"
         let recipe = CoreRecipe.all[indexPath.row]
+        // Extract attributes from recipe to configure cell
         guard let name = recipe.name else {return UITableViewCell()}
         guard let urlPhoto = recipe.urlPhoto else {return UITableViewCell()}
         let cookingTime = Int(recipe.cookingTime)
@@ -50,8 +71,6 @@ extension FavoriteViewController: UITableViewDataSource {
         cell.configure(withImage: urlPhoto, name: name, time: cookingTime, ingredients: ingredient)
         return cell
     }
-    
-    
 }
 extension FavoriteViewController: UITableViewDelegate {
     

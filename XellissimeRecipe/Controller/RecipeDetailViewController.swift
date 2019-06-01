@@ -10,25 +10,28 @@ import UIKit
 import SafariServices
 import CoreData
 
+
+// MARK: - Class RecipeDetailViewController
+/**
+ This class displays the detail of a recipe
+ */
 class RecipeDetailViewController: UIViewController {
-    
-    var coreRecipe:CoreRecipe!
+     // MARK: - Properties
+    /// Recipe object of type CoreRecipe - recipe tagged as a favorite recipe
+    var coreRecipe: CoreRecipe!
+    /// Recipe object of type MyRecipe
     var recipe: MyRecipe!
+    /// Variable to track if recipe is tagged as favorite
     var star = false
-    
+    // MARK: - Outlets - UILabel
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var recipeDescription: UILabel!
-    
     @IBOutlet weak var durationLabel: UILabel!
-  //  @IBOutlet weak var favoriteStar: UIButton!
-    
+    // MARK: - Outlets - UIImageView
     @IBOutlet weak var recipePicture: UIImageView!
-    
+    // MARK: - Outlets - UIButton
     @IBOutlet weak var recipeOnSafari: UIButton!
-    
-  //  @IBAction func favoriteIsPressed(_ sender: UIButton) {
-   //     favoriteSwitch()
- //   }
+
     
     @IBAction func seeRecipeIsPressed(_ sender: Any) {
         showSafariVC(for: recipe.urlRecipeDetail)

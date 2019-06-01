@@ -31,12 +31,17 @@ class FavoriteViewController: UIViewController {
     }
     // MARK: - Methods
     /**
-     Function that updates views and reload data for tableView
+     Function that updates views and reloads data for tableView
      */
     fileprivate func updateView() {
         tableView.estimatedRowHeight = tableView.rowHeight
         tableView.rowHeight = UITableView.automaticDimension
         tableView.reloadData()
+    }
+    /**
+     UnWind segue target to current VC
+     */
+    @IBAction func backToFavorite(segue: UIStoryboardSegue){
     }
 }
 // MARK: - Extensions: protocole UITableViewDataSource
@@ -72,18 +77,24 @@ extension FavoriteViewController: UITableViewDataSource {
         return cell
     }
 }
+    // MARK: - Extensions: protocole UITableViewDelegate
 extension FavoriteViewController: UITableViewDelegate {
-    
+    /**
+     Function that executes actions when a cell is selected
+     */
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("le nombre de favoris dans core Data est de \(CoreRecipe.all.count)")
         if CoreRecipe.all.count > 0 {
             performSegue(withIdentifier: "favoriteDetail", sender: self)
         }
     }
+    /**
+     Function that prepares the segue to transfer data (objects) from a current VC to another (here "RecipeDetailViewController")
+     */
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // check the segue name
         // si la destination est le VC DetailViewController, and set the index from the selected item
         if let dest = segue.destination as? RecipeDetailViewController, let row = tableView.indexPathForSelectedRow?.row {
+            // get recipe attributes of a recipe from coreData and create a MyRecipe object
             let recipe = CoreRecipe.all[row]
             guard let name = recipe.name else {return}
             guard let urlPhoto = recipe.urlPhoto else {return}
@@ -101,8 +112,4 @@ extension FavoriteViewController: UITableViewDelegate {
             dest.coreRecipe = recipe
         }
     }
-    @IBAction func backToFavorite(segue: UIStoryboardSegue){
-        
-    }
-    
 }

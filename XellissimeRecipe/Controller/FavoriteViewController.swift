@@ -38,9 +38,8 @@ class FavoriteViewController: UIViewController {
         if CoreRecipe.all.count == 0 {
 //            Alert.shared.controller = self
 //            Alert.shared.alertDisplay = .noFavorites
-            let actionSheet = UIAlertController(title: "Sorry", message: "No favorites", preferredStyle: .alert)
-            
-            actionSheet.addAction(UIAlertAction(title: "Search and click on forks to add to favorites", style: .cancel, handler: { (action: UIAlertAction) in
+            let actionSheet = UIAlertController(title: "Sorry", message: "No favorites\nClick on forks\nto add favorites", preferredStyle: .alert)
+            actionSheet.addAction(UIAlertAction(title: "Go Search", style: .cancel, handler: { (action: UIAlertAction) in
                   self.performSegue(withIdentifier: "backToMenu", sender: self)
             }))
             self.present(actionSheet, animated: true, completion : nil)
@@ -101,6 +100,20 @@ extension FavoriteViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if CoreRecipe.all.count > 0 {
             performSegue(withIdentifier: "favoriteDetail", sender: self)
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+             let recipe = CoreRecipe.all[indexPath.row]
+             CoreRecipe.removeFromFavorite(coreRecipe: recipe)
+            tableView.beginUpdates()
+            tableView.deleteRows(at: [indexPath], with: .automatic)
+            tableView.endUpdates()
+            testIfEmptyFavorite()
         }
     }
     /**

@@ -51,7 +51,8 @@ class ViewController: UIViewController {
             Alert.shared.alertDisplay = .emptyListOfIngredient
             self.toggleActivityIndicator(shown: false)
         } else {
-            NetworkingClient.shared.search(with: listOfIngredientsArray){ (success, returnlistOfRecipes) in
+            let url = NetworkingClient.shared.createURL(with: listOfIngredientsArray)
+            NetworkingClient.shared.search(with: url){ (success, returnlistOfRecipes) in
                 self.toggleActivityIndicator(shown: false)
                 if returnlistOfRecipes != nil {
                     print("on est là avec \(listOfRecipes.count) recettes")

@@ -23,6 +23,8 @@
 		C19C43B022A69D0F0036EAB7 /* MyRecipeTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C19C43AF22A69D0F0036EAB7 /* MyRecipeTest.swift */; };
 		C19C43B222A6D24F0036EAB7 /* FakeDataForAlamoFire.swift in Sources */ = {isa = PBXBuildFile; fileRef = C19C43B122A6D24F0036EAB7 /* FakeDataForAlamoFire.swift */; };
 		C19C43B422A6D8240036EAB7 /* responseRecipe.json in Resources */ = {isa = PBXBuildFile; fileRef = C19C43B322A6D8240036EAB7 /* responseRecipe.json */; };
+		C19C43B622A6DD7D0036EAB7 /* AlamofireFake.swift in Sources */ = {isa = PBXBuildFile; fileRef = C19C43B522A6DD7D0036EAB7 /* AlamofireFake.swift */; };
+		C19C43B822A717200036EAB7 /* responseRecipeFakeNoName.json in Resources */ = {isa = PBXBuildFile; fileRef = C19C43B722A7171F0036EAB7 /* responseRecipeFakeNoName.json */; };
 		C1AC04FF229D095E0079C53E /* NetworkingClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1AC04FE229D095E0079C53E /* NetworkingClient.swift */; };
 		C1C1CAC422A0379E0020877E /* APIKeys.plist in Resources */ = {isa = PBXBuildFile; fileRef = C1C1CAC322A0379E0020877E /* APIKeys.plist */; };
 		C1C1CAC622A038630020877E /* APIKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1C1CAC522A038630020877E /* APIKeys.swift */; };
@@ -68,6 +70,8 @@
 		C19C43AF22A69D0F0036EAB7 /* MyRecipeTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyRecipeTest.swift; sourceTree = "<group>"; };
 		C19C43B122A6D24F0036EAB7 /* FakeDataForAlamoFire.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeDataForAlamoFire.swift; sourceTree = "<group>"; };
 		C19C43B322A6D8240036EAB7 /* responseRecipe.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = responseRecipe.json; sourceTree = "<group>"; };
+		C19C43B522A6DD7D0036EAB7 /* AlamofireFake.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlamofireFake.swift; sourceTree = "<group>"; };
+		C19C43B722A7171F0036EAB7 /* responseRecipeFakeNoName.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = responseRecipeFakeNoName.json; sourceTree = "<group>"; };
 		C1AC04FE229D095E0079C53E /* NetworkingClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingClient.swift; sourceTree = "<group>"; };
 		C1C1CAC322A0379E0020877E /* APIKeys.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = APIKeys.plist; sourceTree = "<group>"; };
 		C1C1CAC522A038630020877E /* APIKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKeys.swift; sourceTree = "<group>"; };
@@ -163,8 +167,10 @@
 				C19C43AD22A697A80036EAB7 /* SettingsTests.swift */,
 				C1383890229BFFA00018C625 /* XellissimeRecipeTests.swift */,
 				C1E94E83229E5F8A00468D47 /* NetworkingClientTest.swift */,
+				C19C43B522A6DD7D0036EAB7 /* AlamofireFake.swift */,
 				C1383892229BFFA00018C625 /* Info.plist */,
 				C19C43B122A6D24F0036EAB7 /* FakeDataForAlamoFire.swift */,
+				C19C43B722A7171F0036EAB7 /* responseRecipeFakeNoName.json */,
 				C19C43B322A6D8240036EAB7 /* responseRecipe.json */,
 			);
 			path = XellissimeRecipeTests;
@@ -311,6 +317,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C19C43B422A6D8240036EAB7 /* responseRecipe.json in Resources */,
+				C19C43B822A717200036EAB7 /* responseRecipeFakeNoName.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -434,6 +441,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C19C43AE22A697A80036EAB7 /* SettingsTests.swift in Sources */,
+				C19C43B622A6DD7D0036EAB7 /* AlamofireFake.swift in Sources */,
 				C19C43B222A6D24F0036EAB7 /* FakeDataForAlamoFire.swift in Sources */,
 				C1E94E84229E5F8A00468D47 /* NetworkingClientTest.swift in Sources */,
 				C1383891229BFFA00018C625 /* XellissimeRecipeTests.swift in Sources */,

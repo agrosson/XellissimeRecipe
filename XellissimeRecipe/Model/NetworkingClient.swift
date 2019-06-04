@@ -14,12 +14,7 @@ class NetworkingClient {
     static var shared = NetworkingClient()
     private init() {}
     
-    // MARK: - Methods
-    /**
-     Alamofire request to Edamam API, with list of ingredients in the request
-     - Parameter ingredients: an array of ingredients (String)
-     */
-    func search(with ingredients: [String], callBack: @escaping (Bool, [MyRecipe]?) -> ()){
+    func createURL(with ingredients: [String]) -> String {
         listOfRecipes = [MyRecipe]()
         var items = ""
         for ingredient in ingredients {
@@ -29,6 +24,15 @@ class NetworkingClient {
         let appKey = valueForAPIKey(named: "APIEdamamKeys")
         // Number of response si limited to 30
         let url = "https://api.edamam.com/search?q=\(items)&app_id=\(appId)&app_key=\(appKey)&to=30"
+        return url
+    }
+    
+    // MARK: - Methods
+    /**
+     Alamofire request to Edamam API, with list of ingredients in the request
+     - Parameter ingredients: an array of ingredients (String)
+     */
+    func search(with url: String, callBack: @escaping (Bool, [MyRecipe]?) -> ()){
         Alamofire.request(url).responseJSON { (response) in
             DispatchQueue.main.async {
                 guard let myResponse = response.result.value as? [String : Any] else { callBack(false, nil);return}

@@ -47,6 +47,21 @@ class FakeNetworkResponseData {
     
     static let listOfRecipesOK = [MyRecipe]()
     static let listOfRecipesKO = "nothing"
+    
+    static var jsonCorrectDataUrl: String {
+        // retrieve bundle where FakeWeatherResponseData is
+        let bundle = Bundle(for: FakeNetworkResponseData.self)
+        // retrieve url of file to test
+        let url = bundle.url(forResource: "responseRecipe", withExtension: "json")!
+        return url.absoluteString
+    }
+    static var responseRecipeFakeNoName: String {
+        // retrieve bundle where FakeWeatherResponseData is
+        let bundle = Bundle(for: FakeNetworkResponseData.self)
+        // retrieve url of file to test
+        let url = bundle.url(forResource: "responseRecipeFakeNoName", withExtension: "json")!
+        return url.absoluteString
+    }
 }
 /*
 func search(with ingredients: [String], callBack: @escaping (Bool, [MyRecipe]?) -> ()){

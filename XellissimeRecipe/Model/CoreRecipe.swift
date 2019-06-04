@@ -33,7 +33,7 @@ class CoreRecipe: NSManagedObject {
         
     }
     static func removeFromFavorite(coreRecipe: CoreRecipe){
-        if CoreRecipe.all.count > 0 {
+        if !CoreRecipe.all.isEmpty {
             AppDelegate.viewContext.delete(coreRecipe)
             try? AppDelegate.viewContext.save()
             print("le recette a été supprimée des favoris")

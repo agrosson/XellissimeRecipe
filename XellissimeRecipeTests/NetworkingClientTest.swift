@@ -21,11 +21,11 @@ class NetworkingClientTest: XCTestCase {
 
     func testGivenAnIngredientArray_WhenCreateAlamofireRequest_ThenUrlIsUpdated () {
         // Given
-        let array = ["Tomato","chicken"]
+       // let array = ["Tomato","chicken"]
         // when
-        NetworkingClient.shared.search(with: array)
+     //   NetworkingClient.shared.search(with: array)
         // then
-        XCTAssertTrue()
+       // XCTAssertTrue()
         
         
     }

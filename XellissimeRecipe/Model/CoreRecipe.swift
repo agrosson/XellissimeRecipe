@@ -40,6 +40,22 @@ class CoreRecipe: NSManagedObject {
             print("le nombre de favoris est de \(CoreRecipe.all.count)")
         }
     }
+    
+    static func checkIfRecipeIsAlreadyInFavorite(recipe: MyRecipe) -> Bool {
+        let name = recipe.name
+        print(name)
+        var counter = 0
+        for recipe in CoreRecipe.all where recipe.name == name {
+            counter += 1
+        }
+        if counter > 0 {
+            return true
+        } else {
+            return false
+        }
+    }
+    
+    
 }
 
 

@@ -17,7 +17,10 @@ class MyRecipe {
     var urlRecipeDetail = String()
     var ingredient = [String]()
     var cookingTime = Int()
-    init(name: String) {
+    init?(name: String) {
         self.name = name
+        if name.isEmpty {
+            return nil
+        }
     }
 }

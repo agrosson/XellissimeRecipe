@@ -53,18 +53,13 @@ class RecipeDetailViewController: UIViewController {
        
     }
     
+    
+    
     private func favoriteSwitch(){
         if  navigationItem.rightBarButtonItem!.image == UIImage(imageLiteralResourceName: "fork") {
             navigationItem.rightBarButtonItem!.image = UIImage(named: "favoriteSelected")
             star = true
-            //ici test si doublon
-            let name = recipe.name
-            print(name)
-            var counter = 0
-            for recipe in CoreRecipe.all where recipe.name == name {
-                counter += 1
-            }
-            if counter > 0 {
+            if CoreRecipe.checkIfRecipeIsAlreadyInFavorite(recipe: recipe) == true {
                 print("attention doublon")
             } else {
                 print("Nickel pas de doublon")

@@ -19,6 +19,10 @@
 		C1541304229F19EB000ACF3F /* RecipeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1541303229F19EB000ACF3F /* RecipeDetailViewController.swift */; };
 		C170A97322A004DB00AD2928 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = C170A97222A004DB00AD2928 /* Alert.swift */; };
 		C179B51C229EE2F200BC15A9 /* RecipeListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C179B51B229EE2F200BC15A9 /* RecipeListTableViewCell.swift */; };
+		C19C43AE22A697A80036EAB7 /* SettingsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C19C43AD22A697A80036EAB7 /* SettingsTests.swift */; };
+		C19C43B022A69D0F0036EAB7 /* MyRecipeTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C19C43AF22A69D0F0036EAB7 /* MyRecipeTest.swift */; };
+		C19C43B222A6D24F0036EAB7 /* FakeDataForAlamoFire.swift in Sources */ = {isa = PBXBuildFile; fileRef = C19C43B122A6D24F0036EAB7 /* FakeDataForAlamoFire.swift */; };
+		C19C43B422A6D8240036EAB7 /* responseRecipe.json in Resources */ = {isa = PBXBuildFile; fileRef = C19C43B322A6D8240036EAB7 /* responseRecipe.json */; };
 		C1AC04FF229D095E0079C53E /* NetworkingClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1AC04FE229D095E0079C53E /* NetworkingClient.swift */; };
 		C1C1CAC422A0379E0020877E /* APIKeys.plist in Resources */ = {isa = PBXBuildFile; fileRef = C1C1CAC322A0379E0020877E /* APIKeys.plist */; };
 		C1C1CAC622A038630020877E /* APIKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1C1CAC522A038630020877E /* APIKeys.swift */; };
@@ -60,6 +64,10 @@
 		C1541303229F19EB000ACF3F /* RecipeDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailViewController.swift; sourceTree = "<group>"; };
 		C170A97222A004DB00AD2928 /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		C179B51B229EE2F200BC15A9 /* RecipeListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeListTableViewCell.swift; sourceTree = "<group>"; };
+		C19C43AD22A697A80036EAB7 /* SettingsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTests.swift; sourceTree = "<group>"; };
+		C19C43AF22A69D0F0036EAB7 /* MyRecipeTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyRecipeTest.swift; sourceTree = "<group>"; };
+		C19C43B122A6D24F0036EAB7 /* FakeDataForAlamoFire.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeDataForAlamoFire.swift; sourceTree = "<group>"; };
+		C19C43B322A6D8240036EAB7 /* responseRecipe.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = responseRecipe.json; sourceTree = "<group>"; };
 		C1AC04FE229D095E0079C53E /* NetworkingClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingClient.swift; sourceTree = "<group>"; };
 		C1C1CAC322A0379E0020877E /* APIKeys.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = APIKeys.plist; sourceTree = "<group>"; };
 		C1C1CAC522A038630020877E /* APIKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKeys.swift; sourceTree = "<group>"; };
@@ -151,9 +159,13 @@
 		C138388F229BFFA00018C625 /* XellissimeRecipeTests */ = {
 			isa = PBXGroup;
 			children = (
+				C19C43AF22A69D0F0036EAB7 /* MyRecipeTest.swift */,
+				C19C43AD22A697A80036EAB7 /* SettingsTests.swift */,
 				C1383890229BFFA00018C625 /* XellissimeRecipeTests.swift */,
 				C1E94E83229E5F8A00468D47 /* NetworkingClientTest.swift */,
 				C1383892229BFFA00018C625 /* Info.plist */,
+				C19C43B122A6D24F0036EAB7 /* FakeDataForAlamoFire.swift */,
+				C19C43B322A6D8240036EAB7 /* responseRecipe.json */,
 			);
 			path = XellissimeRecipeTests;
 			sourceTree = "<group>";
@@ -298,6 +310,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C19C43B422A6D8240036EAB7 /* responseRecipe.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -420,8 +433,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C19C43AE22A697A80036EAB7 /* SettingsTests.swift in Sources */,
+				C19C43B222A6D24F0036EAB7 /* FakeDataForAlamoFire.swift in Sources */,
 				C1E94E84229E5F8A00468D47 /* NetworkingClientTest.swift in Sources */,
 				C1383891229BFFA00018C625 /* XellissimeRecipeTests.swift in Sources */,
+				C19C43B022A69D0F0036EAB7 /* MyRecipeTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

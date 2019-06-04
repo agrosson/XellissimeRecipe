@@ -130,7 +130,7 @@ extension FavoriteViewController: UITableViewDelegate {
             let cookingTime = Int(recipe.cookingTime)
             guard let ingredient = recipe.ingredient else {return}
             guard let urlDetail = recipe.urlRecipeDetails else {return}
-            let myRecipe = MyRecipe(name: name)
+            guard let myRecipe = MyRecipe(name: name) else {return}
             myRecipe.cookingTime = cookingTime
             myRecipe.urlPhoto = urlPhoto
             myRecipe.ingredient = ingredient

@@ -35,7 +35,7 @@ class NetworkingClient {
             guard let hits = myResponse["hits"] as? [[String : Any]] else { callBack(false, nil);return}
             let numberOfResponse = hits.count
             for number in 0..<numberOfResponse {
-                let recipeToShow = MyRecipe(name: "")
+                guard let recipeToShow = MyRecipe(name: " ") else { callBack(false, nil);return}
                 guard let recipeDetails = hits[number]["recipe"] as? [String : Any] else { callBack(false, nil);return}
                 guard let recipeName = recipeDetails["label"] as? String else { callBack(false, nil);return}
                 recipeToShow.name = recipeName

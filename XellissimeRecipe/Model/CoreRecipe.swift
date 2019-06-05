@@ -9,7 +9,6 @@
 import Foundation
 import CoreData
 
-
 // MARK: - Class CoreRecipe
 /**
  This class enables to save, display and remove a recipe from favorite in CoreData
@@ -66,7 +65,7 @@ class CoreRecipe: NSManagedObject {
         } else {
             return false
         }
-    } 
+    }
 }
 
 

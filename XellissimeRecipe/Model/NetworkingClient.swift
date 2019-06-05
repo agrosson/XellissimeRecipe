@@ -9,11 +9,22 @@
 import Foundation
 import Alamofire
 
+
+// MARK: - Class NetworkingClient
+/**
+ This class enables to send request to Edamam API with Alamofire
+ */
 class NetworkingClient {
-    
+    //MARK: - Properties
+    /// Singleton variable for NetworkingClient
     static var shared = NetworkingClient()
+    //MARK: -
     private init() {}
-    
+    // MARK: - Methods
+    /**
+     This function creates a url string to be used with Alamofire with the list of ingredients
+     - Parameter ingredients: an array of ingredients (String)
+     */
     func createURL(with ingredients: [String]) -> String {
         listOfRecipes = [MyRecipe]()
         var items = ""
@@ -26,11 +37,9 @@ class NetworkingClient {
         let url = "https://api.edamam.com/search?q=\(items)&app_id=\(appId)&app_key=\(appKey)&to=30"
         return url
     }
-    
-    // MARK: - Methods
     /**
      Alamofire request to Edamam API, with list of ingredients in the request
-     - Parameter ingredients: an array of ingredients (String)
+     - Parameter url: the url to be used for API Edamam (String)
      */
     func search(with url: String, callBack: @escaping (Bool, [MyRecipe]?) -> ()){
         Alamofire.request(url).responseJSON { (response) in

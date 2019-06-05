@@ -9,17 +9,24 @@
 import Foundation
 import CoreData
 
+
+// MARK: - Class CoreRecipe
+/**
+ This class enables to save, display and remove a recipe from favorite in CoreData
+ */
 class CoreRecipe: NSManagedObject {
-    
+    // MARK: - Properties
+    /// Array of all favorite recipes saved in CoreData
     static var all :[CoreRecipe] {
         let request: NSFetchRequest<CoreRecipe> = CoreRecipe.fetchRequest()
         guard let favorites = try? AppDelegate.viewContext.fetch(request) else {return []}
         return favorites
     }
-    static func delete(_ thisRecipe: CoreRecipe){
-        AppDelegate.viewContext.delete(thisRecipe)
-        try? AppDelegate.viewContext.save()
-    }
+    // MARK: - Methods
+    /**
+     This function enables to save a recipe in CoreData
+     - Parameter recipe: the recipe to save
+     */
     static func saveToFavorite(recipe: MyRecipe){
         let savedRecipe = CoreRecipe(context: AppDelegate.viewContext)
         savedRecipe.name = recipe.name
@@ -30,8 +37,11 @@ class CoreRecipe: NSManagedObject {
         try? AppDelegate.viewContext.save()
         print("le recette a été enregistrée en favori")
         print("le nombre de favoris est de \(CoreRecipe.all.count)")
-        
     }
+    /**
+     This function enables to delete a recipe from CoreData
+     - Parameter coreRecipe: the recipe to delete
+     */
     static func removeFromFavorite(coreRecipe: CoreRecipe){
         if !CoreRecipe.all.isEmpty {
             AppDelegate.viewContext.delete(coreRecipe)
@@ -40,7 +50,10 @@ class CoreRecipe: NSManagedObject {
             print("le nombre de favoris est de \(CoreRecipe.all.count)")
         }
     }
-    
+    /**
+     This function enables to check if a recipe is already in CoreData as a favorite
+     - Parameter recipe: the recipe to check
+     */
     static func checkIfRecipeIsAlreadyInFavorite(recipe: MyRecipe) -> Bool {
         let name = recipe.name
         print(name)
@@ -53,9 +66,7 @@ class CoreRecipe: NSManagedObject {
         } else {
             return false
         }
-    }
-    
-    
+    } 
 }
 
 

@@ -15,7 +15,7 @@
 		C1383883229BFFA00018C625 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C1383882229BFFA00018C625 /* Assets.xcassets */; };
 		C1383886229BFFA00018C625 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C1383884229BFFA00018C625 /* LaunchScreen.storyboard */; };
 		C1383891229BFFA00018C625 /* XellissimeRecipeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1383890229BFFA00018C625 /* XellissimeRecipeTests.swift */; };
-		C138389C229C016F0018C625 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = C138389B229C016F0018C625 /* Settings.swift */; };
+		C138389C229C016F0018C625 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = C138389B229C016F0018C625 /* Utilities.swift */; };
 		C1541304229F19EB000ACF3F /* RecipeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1541303229F19EB000ACF3F /* RecipeDetailViewController.swift */; };
 		C170A97322A004DB00AD2928 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = C170A97222A004DB00AD2928 /* Alert.swift */; };
 		C179B51C229EE2F200BC15A9 /* RecipeListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C179B51B229EE2F200BC15A9 /* RecipeListTableViewCell.swift */; };
@@ -69,7 +69,7 @@
 		C138388C229BFFA00018C625 /* XellissimeRecipeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = XellissimeRecipeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C1383890229BFFA00018C625 /* XellissimeRecipeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XellissimeRecipeTests.swift; sourceTree = "<group>"; };
 		C1383892229BFFA00018C625 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C138389B229C016F0018C625 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
+		C138389B229C016F0018C625 /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		C1541303229F19EB000ACF3F /* RecipeDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailViewController.swift; sourceTree = "<group>"; };
 		C170A97222A004DB00AD2928 /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		C179B51B229EE2F200BC15A9 /* RecipeListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeListTableViewCell.swift; sourceTree = "<group>"; };
@@ -204,7 +204,7 @@
 				C138387F229BFF9F0018C625 /* XellissimeRecipe.xcdatamodeld */,
 				C1C1CAC722A03D730020877E /* CoreRecipe.swift */,
 				C1AC04FE229D095E0079C53E /* NetworkingClient.swift */,
-				C138389B229C016F0018C625 /* Settings.swift */,
+				C138389B229C016F0018C625 /* Utilities.swift */,
 				C1C8FBB0229D2944006EB7D8 /* Recipe.swift */,
 			);
 			path = Model;
@@ -456,7 +456,7 @@
 				C1AC04FF229D095E0079C53E /* NetworkingClient.swift in Sources */,
 				C1383879229BFF9F0018C625 /* AppDelegate.swift in Sources */,
 				C1C8FBD1229DD774006EB7D8 /* ViewController.swift in Sources */,
-				C138389C229C016F0018C625 /* Settings.swift in Sources */,
+				C138389C229C016F0018C625 /* Utilities.swift in Sources */,
 				C1C1CAC822A03D730020877E /* CoreRecipe.swift in Sources */,
 				C1C1CACC22A0448D0020877E /* FavoriteViewController.swift in Sources */,
 				C170A97322A004DB00AD2928 /* Alert.swift in Sources */,

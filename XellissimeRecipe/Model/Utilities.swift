@@ -12,7 +12,13 @@ import UIKit
 // Credit Photo by Brooke Lark on Unsplash
 // Photo by Dan Gold on Unsplash
 
- func imageResize( _ image:UIImage, withSize newSize:CGSize) -> UIImage {
+/**
+ This function enables to resize an image
+ - Parameter image: the image to resize
+ - Parameter newSize: the new size to set to the image
+ - Returns: image resized
+ */
+func imageResize( _ image:UIImage, withSize newSize:CGSize) -> UIImage {
     UIGraphicsBeginImageContext(newSize)
     image.draw(in: CGRect(x: 0,y: 0,width: newSize.width,height: newSize.height))
     let newImage = UIGraphicsGetImageFromCurrentImageContext()

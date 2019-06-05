@@ -20,7 +20,7 @@ class RecipeDetailViewController: UIViewController {
     /// Recipe object of type CoreRecipe - recipe tagged as a favorite recipe
     var coreRecipe: CoreRecipe?
     /// Recipe object of type MyRecipe
-    var recipe: MyRecipe!
+    var recipe: MyRecipe?
     /// Variable to track if recipe is tagged as favorite
     var star = false
     // MARK: - Outlets - UILabel
@@ -34,7 +34,7 @@ class RecipeDetailViewController: UIViewController {
     // MARK: - Methods - viewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "fork"), style: .plain, target: self, action: #selector(favoriteTapped))
+       
         // navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Add", style: .plain, target: self, action: #selector(favoriteTapped))
         setupScreen()
     }
@@ -43,6 +43,9 @@ class RecipeDetailViewController: UIViewController {
      Action that opens Safari and displays recipe directions on Internet
      */
     @IBAction func seeRecipeIsPressed(_ sender: Any) {
+        guard let recipe = recipe else {
+           return
+        }
         showSafariVC(for: recipe.urlRecipeDetail)
     }
     /**
@@ -59,6 +62,9 @@ class RecipeDetailViewController: UIViewController {
         if  navigationItem.rightBarButtonItem!.image == UIImage(imageLiteralResourceName: "fork") {
             navigationItem.rightBarButtonItem!.image = UIImage(named: "favoriteSelected")
             star = true
+            guard let recipe = recipe else {
+                return
+            }
             if CoreRecipe.checkIfRecipeIsAlreadyInFavorite(recipe: recipe) == true {
                 print("attention doublon")
             } else {
@@ -69,6 +75,10 @@ class RecipeDetailViewController: UIViewController {
         } else {
             navigationItem.rightBarButtonItem!.image = UIImage(named: "fork")
             star = false
+            guard let recipe = recipe else {return}
+            if CoreRecipe.checkIfRecipeIsAlreadyInFavorite(recipe: recipe) == true {
+                CoreRecipe.removeACoreRecipeFromMyRecipe(recipe: recipe)
+            }
             if let coreRecipe = coreRecipe {
                 CoreRecipe.removeFromFavorite(coreRecipe: coreRecipe)
             }
@@ -82,9 +92,17 @@ class RecipeDetailViewController: UIViewController {
     }
     
     private func setupScreen(){
+        guard let recipe = recipe else {return}
+        if CoreRecipe.checkIfRecipeIsAlreadyInFavorite(recipe: recipe) == true {
+            navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "favoriteSelected"), style: .plain, target: self, action: #selector(favoriteTapped))
+        } else {
+            navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "fork"), style: .plain, target: self, action: #selector(favoriteTapped))
+        }
         print("le nombre de favoris est de \(CoreRecipe.all.count)")
-        if CoreRecipe.all.count < 1 {
+        if CoreRecipe.checkIfRecipeIsAlreadyInFavorite(recipe: recipe) == false {
             navigationItem.rightBarButtonItem!.image = UIImage(named: "fork")
+        } else {
+            navigationItem.rightBarButtonItem!.image = UIImage(named: "favoriteSelected")
         }
         if star {
             navigationItem.rightBarButtonItem!.image = UIImage(named: "favoriteSelected")
@@ -105,9 +123,9 @@ class RecipeDetailViewController: UIViewController {
         recipePicture.leftAnchor.constraint(equalTo: view.leftAnchor, constant: width).isActive = true
         recipePicture.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -width).isActive = true
         var imageToDisplay : UIImage?
-        let url = URL(string: recipe.urlPhoto )
-        let data = try? Data(contentsOf: url!)
-        imageToDisplay = UIImage(data: data!)
+        guard let url = URL(string: recipe.urlPhoto ) else {return}
+        guard let data = try? Data(contentsOf: url) else {return}
+        imageToDisplay = UIImage(data: data)
         if let myImage = imageToDisplay {
             recipePicture.image = myImage
         } else {

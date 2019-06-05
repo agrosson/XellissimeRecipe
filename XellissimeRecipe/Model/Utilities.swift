@@ -21,9 +21,10 @@ import UIKit
 func imageResize( _ image:UIImage, withSize newSize:CGSize) -> UIImage {
     UIGraphicsBeginImageContext(newSize)
     image.draw(in: CGRect(x: 0,y: 0,width: newSize.width,height: newSize.height))
-    let newImage = UIGraphicsGetImageFromCurrentImageContext()
+    let newImage = UIImage()
+    guard let newImageToResize = UIGraphicsGetImageFromCurrentImageContext() else { return newImage}
     UIGraphicsEndImageContext()
-    return newImage!.withRenderingMode(.automatic)
+    return newImageToResize.withRenderingMode(.automatic)
 }
 
 /**

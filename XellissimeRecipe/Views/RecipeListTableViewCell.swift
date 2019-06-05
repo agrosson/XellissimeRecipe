@@ -28,9 +28,9 @@ class RecipeListTableViewCell: UITableViewCell {
     
     func configure(withImage: String, name: String, time: Int, ingredients: [String]) {
         var imageToGet : UIImage?
-        let url = URL(string: withImage )
-        let data = try? Data(contentsOf: url!)
-        imageToGet = UIImage(data: data!)
+        guard let url = URL(string: withImage ) else {return}
+        guard let data = try? Data(contentsOf: url) else {return}
+        imageToGet = UIImage(data: data)
         let mySize = CGSize(width: 100, height: 100)
         if let myImage = imageToGet {
             imageRecipe.image = imageResize(myImage, withSize: mySize)

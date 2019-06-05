@@ -16,20 +16,18 @@ class FavoriteTableViewCell: UITableViewCell {
      
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
     
     func configure(withImage: String, name: String, time: Int, ingredients: [String]) {
         var imageToGet : UIImage?
-        let url = URL(string: withImage )
-        let data = try? Data(contentsOf: url!)
-        imageToGet = UIImage(data: data!)
+        guard let url = URL(string: withImage ) else {return}
+        let data = try? Data(contentsOf: url)
+        guard let dataFromUrl = data else {return}
+        imageToGet = UIImage(data: dataFromUrl)
         let mySize = CGSize(width: 100, height: 100)
         if let myImage = imageToGet {
             recipeImage.image = imageResize(myImage, withSize: mySize)

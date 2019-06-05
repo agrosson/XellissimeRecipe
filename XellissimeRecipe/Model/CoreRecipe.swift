@@ -55,15 +55,24 @@ class CoreRecipe: NSManagedObject {
      */
     static func checkIfRecipeIsAlreadyInFavorite(recipe: MyRecipe) -> Bool {
         let name = recipe.name
+        let url = recipe.urlRecipeDetail
         print(name)
         var counter = 0
-        for recipe in CoreRecipe.all where recipe.name == name {
+        for recipe in CoreRecipe.all where recipe.name == name && recipe.urlRecipeDetails == url {
             counter += 1
         }
         if counter > 0 {
             return true
         } else {
             return false
+        }
+    }
+    
+    static func removeACoreRecipeFromMyRecipe(recipe: MyRecipe) {
+        let name = recipe.name
+        let url = recipe.urlRecipeDetail
+        for item in CoreRecipe.all where item.name == name && item.urlRecipeDetails == url{
+            removeFromFavorite(coreRecipe: item)
         }
     }
 }

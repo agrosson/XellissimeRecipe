@@ -34,7 +34,7 @@ class RecipeDetailViewController: UIViewController {
     // MARK: - Methods - viewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
-       
+        
         // navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Add", style: .plain, target: self, action: #selector(favoriteTapped))
         setupScreen()
     }
@@ -44,7 +44,7 @@ class RecipeDetailViewController: UIViewController {
      */
     @IBAction func seeRecipeIsPressed(_ sender: Any) {
         guard let recipe = recipe else {
-           return
+            return
         }
         showSafariVC(for: recipe.urlRecipeDetail)
     }
@@ -53,7 +53,7 @@ class RecipeDetailViewController: UIViewController {
      */
     @objc func favoriteTapped(){
         favoriteSwitch()
-       
+        
     }
     
     
@@ -82,7 +82,7 @@ class RecipeDetailViewController: UIViewController {
             if let coreRecipe = coreRecipe {
                 CoreRecipe.removeFromFavorite(coreRecipe: coreRecipe)
             }
-             performSegue(withIdentifier: "backToFavorite", sender: self)
+            performSegue(withIdentifier: "backToFavorite", sender: self)
         }
     }
     
@@ -95,15 +95,12 @@ class RecipeDetailViewController: UIViewController {
         guard let recipe = recipe else {return}
         if CoreRecipe.checkIfRecipeIsAlreadyInFavorite(recipe: recipe) == true {
             navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "favoriteSelected"), style: .plain, target: self, action: #selector(favoriteTapped))
+            star = true
         } else {
+            star = false
             navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "fork"), style: .plain, target: self, action: #selector(favoriteTapped))
         }
         print("le nombre de favoris est de \(CoreRecipe.all.count)")
-        if CoreRecipe.checkIfRecipeIsAlreadyInFavorite(recipe: recipe) == false {
-            navigationItem.rightBarButtonItem!.image = UIImage(named: "fork")
-        } else {
-            navigationItem.rightBarButtonItem!.image = UIImage(named: "favoriteSelected")
-        }
         if star {
             navigationItem.rightBarButtonItem!.image = UIImage(named: "favoriteSelected")
         }

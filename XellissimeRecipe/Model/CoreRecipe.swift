@@ -74,6 +74,7 @@ class CoreRecipe: NSManagedObject {
         for item in CoreRecipe.all where item.name == name && item.urlRecipeDetails == url{
             removeFromFavorite(coreRecipe: item)
         }
+         try? AppDelegate.viewContext.save()
     }
 }
 

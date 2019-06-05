@@ -59,13 +59,30 @@ class XellissimeRecipeTests: XCTestCase {
     func testIfDuplicate(){
         //given that a recipe with name Pizza has been saved
         guard let recipe = MyRecipe(name: "Pizza") else {return}
+        recipe.urlRecipeDetail = "urlTest"
         CoreRecipe.saveToFavorite(recipe: recipe)
         // when try to save same item
         guard let recipe2 = MyRecipe(name: "Pizza") else {return}
         // the testIsTrue
+        recipe2.urlRecipeDetail = "urlTest"
         let test = CoreRecipe.checkIfRecipeIsAlreadyInFavorite(recipe: recipe2)
         XCTAssertTrue(test)
     }
+    
+    // Test if Duplicate favorite in database
+    func testIfDuplicateNoBecauseOfURL(){
+        //given that a recipe with name Pizza has been saved
+        guard let recipe = MyRecipe(name: "Pizza") else {return}
+        recipe.urlRecipeDetail = "urlTest"
+        CoreRecipe.saveToFavorite(recipe: recipe)
+        // when try to save same item
+        guard let recipe2 = MyRecipe(name: "Pizza") else {return}
+        // the testIsTrue
+        recipe2.urlRecipeDetail = "urlTest&"
+        let test = CoreRecipe.checkIfRecipeIsAlreadyInFavorite(recipe: recipe2)
+        XCTAssertFalse(test)
+    }
+    
     
     // Test if non Duplicate favorite in database
     func testIfNoDuplicate(){
@@ -88,4 +105,25 @@ class XellissimeRecipeTests: XCTestCase {
         let numberAfter = CoreRecipe.all.count
         XCTAssertEqual(numberAfter, numberBefore-1)
     }
+    
+    // Test function remove a favorite CoreRecipe from a MyRecipe diplayed
+    func testGivenAMyRecipeWhenAlreadyInFavoriteThenRemoveWhenClicOnFavoriteIcon() {
+        let uuid = UUID()
+        let uuidURl = UUID()
+        guard let recipeToBeLast = MyRecipe(name: "\(uuid)") else {return}
+        recipeToBeLast.urlRecipeDetail = "\(uuidURl)"
+        CoreRecipe.saveToFavorite(recipe: recipeToBeLast)
+        let numberFavoriteBefore = CoreRecipe.all.count
+        print(numberFavoriteBefore)
+        guard let itemToCheck = CoreRecipe.all.last else {return}
+        guard let name = itemToCheck.name else {return}
+        guard let url = itemToCheck.urlRecipeDetails else {return}
+        guard let itemMyRecipe = MyRecipe(name: name) else {return}
+        itemMyRecipe.urlRecipeDetail = url
+        CoreRecipe.removeACoreRecipeFromMyRecipe(recipe: itemMyRecipe)
+        let numberAfter = CoreRecipe.all.count
+        XCTAssertEqual(numberAfter, numberFavoriteBefore-1)
+        
+    }
 }
+

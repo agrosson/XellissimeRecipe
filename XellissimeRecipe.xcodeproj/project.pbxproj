@@ -19,11 +19,18 @@
 		C1541304229F19EB000ACF3F /* RecipeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1541303229F19EB000ACF3F /* RecipeDetailViewController.swift */; };
 		C170A97322A004DB00AD2928 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = C170A97222A004DB00AD2928 /* Alert.swift */; };
 		C179B51C229EE2F200BC15A9 /* RecipeListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C179B51B229EE2F200BC15A9 /* RecipeListTableViewCell.swift */; };
+		C17FAC5522A79F5E004550E1 /* responseRecipeEmpty.json in Resources */ = {isa = PBXBuildFile; fileRef = C17FAC5422A79F5E004550E1 /* responseRecipeEmpty.json */; };
+		C17FAC5722A79F64004550E1 /* responseRecipeFakeNoHit.json in Resources */ = {isa = PBXBuildFile; fileRef = C17FAC5622A79F64004550E1 /* responseRecipeFakeNoHit.json */; };
+		C17FAC5922A79F69004550E1 /* responseRecipeFakeNoDetails.json in Resources */ = {isa = PBXBuildFile; fileRef = C17FAC5822A79F68004550E1 /* responseRecipeFakeNoDetails.json */; };
+		C17FAC5B22A7A39C004550E1 /* responseRecipeFakeBadFormat.json in Resources */ = {isa = PBXBuildFile; fileRef = C17FAC5A22A7A39C004550E1 /* responseRecipeFakeBadFormat.json */; };
+		C17FAC6022A7A3A7004550E1 /* responseRecipeFakeNoIngredientLines.json in Resources */ = {isa = PBXBuildFile; fileRef = C17FAC5C22A7A3A6004550E1 /* responseRecipeFakeNoIngredientLines.json */; };
+		C17FAC6122A7A3A7004550E1 /* responseRecipeFakeNoImage.json in Resources */ = {isa = PBXBuildFile; fileRef = C17FAC5D22A7A3A7004550E1 /* responseRecipeFakeNoImage.json */; };
+		C17FAC6222A7A3A7004550E1 /* responseRecipeFakeNoUrl.json in Resources */ = {isa = PBXBuildFile; fileRef = C17FAC5E22A7A3A7004550E1 /* responseRecipeFakeNoUrl.json */; };
+		C17FAC6322A7A3A7004550E1 /* responseRecipeFakeNoTime.json in Resources */ = {isa = PBXBuildFile; fileRef = C17FAC5F22A7A3A7004550E1 /* responseRecipeFakeNoTime.json */; };
 		C19C43AE22A697A80036EAB7 /* SettingsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C19C43AD22A697A80036EAB7 /* SettingsTests.swift */; };
 		C19C43B022A69D0F0036EAB7 /* MyRecipeTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C19C43AF22A69D0F0036EAB7 /* MyRecipeTest.swift */; };
 		C19C43B222A6D24F0036EAB7 /* FakeDataForAlamoFire.swift in Sources */ = {isa = PBXBuildFile; fileRef = C19C43B122A6D24F0036EAB7 /* FakeDataForAlamoFire.swift */; };
 		C19C43B422A6D8240036EAB7 /* responseRecipe.json in Resources */ = {isa = PBXBuildFile; fileRef = C19C43B322A6D8240036EAB7 /* responseRecipe.json */; };
-		C19C43B622A6DD7D0036EAB7 /* AlamofireFake.swift in Sources */ = {isa = PBXBuildFile; fileRef = C19C43B522A6DD7D0036EAB7 /* AlamofireFake.swift */; };
 		C19C43B822A717200036EAB7 /* responseRecipeFakeNoName.json in Resources */ = {isa = PBXBuildFile; fileRef = C19C43B722A7171F0036EAB7 /* responseRecipeFakeNoName.json */; };
 		C1AC04FF229D095E0079C53E /* NetworkingClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1AC04FE229D095E0079C53E /* NetworkingClient.swift */; };
 		C1C1CAC422A0379E0020877E /* APIKeys.plist in Resources */ = {isa = PBXBuildFile; fileRef = C1C1CAC322A0379E0020877E /* APIKeys.plist */; };
@@ -66,11 +73,18 @@
 		C1541303229F19EB000ACF3F /* RecipeDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailViewController.swift; sourceTree = "<group>"; };
 		C170A97222A004DB00AD2928 /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		C179B51B229EE2F200BC15A9 /* RecipeListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeListTableViewCell.swift; sourceTree = "<group>"; };
+		C17FAC5422A79F5E004550E1 /* responseRecipeEmpty.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = responseRecipeEmpty.json; sourceTree = "<group>"; };
+		C17FAC5622A79F64004550E1 /* responseRecipeFakeNoHit.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = responseRecipeFakeNoHit.json; sourceTree = "<group>"; };
+		C17FAC5822A79F68004550E1 /* responseRecipeFakeNoDetails.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = responseRecipeFakeNoDetails.json; sourceTree = "<group>"; };
+		C17FAC5A22A7A39C004550E1 /* responseRecipeFakeBadFormat.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = responseRecipeFakeBadFormat.json; sourceTree = "<group>"; };
+		C17FAC5C22A7A3A6004550E1 /* responseRecipeFakeNoIngredientLines.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = responseRecipeFakeNoIngredientLines.json; sourceTree = "<group>"; };
+		C17FAC5D22A7A3A7004550E1 /* responseRecipeFakeNoImage.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = responseRecipeFakeNoImage.json; sourceTree = "<group>"; };
+		C17FAC5E22A7A3A7004550E1 /* responseRecipeFakeNoUrl.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = responseRecipeFakeNoUrl.json; sourceTree = "<group>"; };
+		C17FAC5F22A7A3A7004550E1 /* responseRecipeFakeNoTime.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = responseRecipeFakeNoTime.json; sourceTree = "<group>"; };
 		C19C43AD22A697A80036EAB7 /* SettingsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTests.swift; sourceTree = "<group>"; };
 		C19C43AF22A69D0F0036EAB7 /* MyRecipeTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyRecipeTest.swift; sourceTree = "<group>"; };
 		C19C43B122A6D24F0036EAB7 /* FakeDataForAlamoFire.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeDataForAlamoFire.swift; sourceTree = "<group>"; };
 		C19C43B322A6D8240036EAB7 /* responseRecipe.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = responseRecipe.json; sourceTree = "<group>"; };
-		C19C43B522A6DD7D0036EAB7 /* AlamofireFake.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlamofireFake.swift; sourceTree = "<group>"; };
 		C19C43B722A7171F0036EAB7 /* responseRecipeFakeNoName.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = responseRecipeFakeNoName.json; sourceTree = "<group>"; };
 		C1AC04FE229D095E0079C53E /* NetworkingClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingClient.swift; sourceTree = "<group>"; };
 		C1C1CAC322A0379E0020877E /* APIKeys.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = APIKeys.plist; sourceTree = "<group>"; };
@@ -167,11 +181,18 @@
 				C19C43AD22A697A80036EAB7 /* SettingsTests.swift */,
 				C1383890229BFFA00018C625 /* XellissimeRecipeTests.swift */,
 				C1E94E83229E5F8A00468D47 /* NetworkingClientTest.swift */,
-				C19C43B522A6DD7D0036EAB7 /* AlamofireFake.swift */,
 				C1383892229BFFA00018C625 /* Info.plist */,
 				C19C43B122A6D24F0036EAB7 /* FakeDataForAlamoFire.swift */,
 				C19C43B722A7171F0036EAB7 /* responseRecipeFakeNoName.json */,
+				C17FAC5422A79F5E004550E1 /* responseRecipeEmpty.json */,
+				C17FAC5622A79F64004550E1 /* responseRecipeFakeNoHit.json */,
 				C19C43B322A6D8240036EAB7 /* responseRecipe.json */,
+				C17FAC5822A79F68004550E1 /* responseRecipeFakeNoDetails.json */,
+				C17FAC5D22A7A3A7004550E1 /* responseRecipeFakeNoImage.json */,
+				C17FAC5C22A7A3A6004550E1 /* responseRecipeFakeNoIngredientLines.json */,
+				C17FAC5F22A7A3A7004550E1 /* responseRecipeFakeNoTime.json */,
+				C17FAC5E22A7A3A7004550E1 /* responseRecipeFakeNoUrl.json */,
+				C17FAC5A22A7A39C004550E1 /* responseRecipeFakeBadFormat.json */,
 			);
 			path = XellissimeRecipeTests;
 			sourceTree = "<group>";
@@ -316,8 +337,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C17FAC5722A79F64004550E1 /* responseRecipeFakeNoHit.json in Resources */,
+				C17FAC5922A79F69004550E1 /* responseRecipeFakeNoDetails.json in Resources */,
 				C19C43B422A6D8240036EAB7 /* responseRecipe.json in Resources */,
 				C19C43B822A717200036EAB7 /* responseRecipeFakeNoName.json in Resources */,
+				C17FAC6222A7A3A7004550E1 /* responseRecipeFakeNoUrl.json in Resources */,
+				C17FAC6322A7A3A7004550E1 /* responseRecipeFakeNoTime.json in Resources */,
+				C17FAC6122A7A3A7004550E1 /* responseRecipeFakeNoImage.json in Resources */,
+				C17FAC5B22A7A39C004550E1 /* responseRecipeFakeBadFormat.json in Resources */,
+				C17FAC6022A7A3A7004550E1 /* responseRecipeFakeNoIngredientLines.json in Resources */,
+				C17FAC5522A79F5E004550E1 /* responseRecipeEmpty.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -441,7 +470,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				C19C43AE22A697A80036EAB7 /* SettingsTests.swift in Sources */,
-				C19C43B622A6DD7D0036EAB7 /* AlamofireFake.swift in Sources */,
 				C19C43B222A6D24F0036EAB7 /* FakeDataForAlamoFire.swift in Sources */,
 				C1E94E84229E5F8A00468D47 /* NetworkingClientTest.swift in Sources */,
 				C1383891229BFFA00018C625 /* XellissimeRecipeTests.swift in Sources */,

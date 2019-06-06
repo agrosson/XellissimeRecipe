@@ -116,6 +116,18 @@ extension FavoriteViewController: UITableViewDelegate {
             testIfEmptyFavorite()
         }
     }
+    
+    func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let shareRecipe = UIContextualAction(style: .normal, title: "Share") { (action, view, nil) in
+            let recipe = CoreRecipe.all[indexPath.row]
+            guard let recipeUrl = recipe.urlRecipeDetails else {return}
+            let activityController = UIActivityViewController(activityItems: ["Hi, I wanted to share with you this fantastic recipe :\(recipeUrl)\nEnjoy !!"], applicationActivities: nil)
+            self.present(activityController, animated: true, completion:{
+                print("share is done !! ")
+            })
+        }
+        return UISwipeActionsConfiguration(actions: [shareRecipe])
+    }
     /**
      Function that prepares the segue to transfer data (objects) from a current VC to another (here "RecipeDetailViewController")
      */

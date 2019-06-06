@@ -284,15 +284,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EJe-w6-pXI">
-                                <rect key="frame" x="171.5" y="502" width="71" height="36"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.40000000000000002" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EJe-w6-pXI">
+                                <rect key="frame" x="171.5" y="492" width="71" height="36"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="12" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lur-Mx-rx5">
-                                <rect key="frame" x="8" y="571.5" width="398" height="104.5"/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -313,26 +307,33 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rI0-2D-lGJ">
-                                <rect key="frame" x="8" y="548" width="398" height="13.5"/>
+                                <rect key="frame" x="8" y="538" width="398" height="13.5"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleCaption2"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uJq-eu-9Gp">
+                                <rect key="frame" x="8" y="561.5" width="398" height="124.5"/>
+                                <color key="backgroundColor" red="0.93982261420000002" green="0.60410839319999998" blue="0.2900769413" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleCaption2"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" red="0.93982261420000002" green="0.60410839319999998" blue="0.2900769413" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
-                            <constraint firstItem="Kgk-ff-rZh" firstAttribute="trailing" secondItem="Lur-Mx-rx5" secondAttribute="trailing" constant="8" id="0l2-1w-pmc"/>
-                            <constraint firstItem="Lur-Mx-rx5" firstAttribute="leading" secondItem="Kgk-ff-rZh" secondAttribute="leading" constant="8" id="46c-iL-oDs"/>
-                            <constraint firstItem="jLB-re-n6l" firstAttribute="top" secondItem="Lur-Mx-rx5" secondAttribute="bottom" priority="999" constant="20" id="5zO-hg-giC"/>
+                            <constraint firstItem="Kgk-ff-rZh" firstAttribute="trailing" secondItem="uJq-eu-9Gp" secondAttribute="trailing" constant="8" id="1US-VG-ghW"/>
                             <constraint firstItem="msR-1T-soT" firstAttribute="leading" secondItem="Kgk-ff-rZh" secondAttribute="leading" priority="999" constant="20" id="CtY-00-O8z"/>
                             <constraint firstItem="Kgk-ff-rZh" firstAttribute="bottom" secondItem="jLB-re-n6l" secondAttribute="bottom" constant="25" id="DLR-yO-6sH"/>
                             <constraint firstItem="rI0-2D-lGJ" firstAttribute="top" secondItem="EJe-w6-pXI" secondAttribute="bottom" constant="10" id="GBy-Oa-5IO"/>
                             <constraint firstItem="Kgk-ff-rZh" firstAttribute="trailing" secondItem="msR-1T-soT" secondAttribute="trailing" priority="999" constant="20" id="GjC-V1-ifL"/>
-                            <constraint firstItem="EJe-w6-pXI" firstAttribute="top" secondItem="msR-1T-soT" secondAttribute="bottom" constant="20" id="Lwb-rI-Bwx"/>
+                            <constraint firstItem="EJe-w6-pXI" firstAttribute="top" secondItem="msR-1T-soT" secondAttribute="bottom" constant="10" id="Lwb-rI-Bwx"/>
                             <constraint firstItem="msR-1T-soT" firstAttribute="top" secondItem="Kgk-ff-rZh" secondAttribute="top" priority="999" constant="20" id="SSY-R5-W3k"/>
                             <constraint firstItem="Kgk-ff-rZh" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="EJe-w6-pXI" secondAttribute="trailing" priority="999" constant="20" id="V2K-2y-TMK"/>
+                            <constraint firstItem="uJq-eu-9Gp" firstAttribute="top" secondItem="rI0-2D-lGJ" secondAttribute="bottom" constant="10" id="bW7-Xj-Y1I"/>
                             <constraint firstItem="rI0-2D-lGJ" firstAttribute="leading" secondItem="Kgk-ff-rZh" secondAttribute="leading" constant="8" id="dvH-VB-GWp"/>
-                            <constraint firstItem="Lur-Mx-rx5" firstAttribute="top" secondItem="rI0-2D-lGJ" secondAttribute="bottom" constant="10" id="goF-qD-Upq"/>
+                            <constraint firstItem="jLB-re-n6l" firstAttribute="top" secondItem="uJq-eu-9Gp" secondAttribute="bottom" constant="10" id="eAe-en-rF4"/>
+                            <constraint firstItem="uJq-eu-9Gp" firstAttribute="leading" secondItem="Kgk-ff-rZh" secondAttribute="leading" constant="8" id="hmZ-dq-KVK"/>
                             <constraint firstItem="EJe-w6-pXI" firstAttribute="centerX" secondItem="d4H-pn-d9U" secondAttribute="centerX" id="ka1-Sm-pcU"/>
                             <constraint firstItem="Kgk-ff-rZh" firstAttribute="trailing" secondItem="rI0-2D-lGJ" secondAttribute="trailing" constant="8" id="mL9-Q5-5f9"/>
                             <constraint firstItem="EJe-w6-pXI" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Kgk-ff-rZh" secondAttribute="leading" priority="999" constant="20" id="nC1-fW-A69"/>
@@ -346,7 +347,7 @@
                     <connections>
                         <outlet property="durationLabel" destination="rI0-2D-lGJ" id="3oX-dv-OO3"/>
                         <outlet property="name" destination="EJe-w6-pXI" id="RRa-6j-ozs"/>
-                        <outlet property="recipeDescription" destination="Lur-Mx-rx5" id="TsH-AE-0MS"/>
+                        <outlet property="recipeDescription" destination="uJq-eu-9Gp" id="tb8-Bu-RRl"/>
                         <outlet property="recipeOnSafari" destination="jLB-re-n6l" id="Gex-Av-3PD"/>
                         <outlet property="recipePicture" destination="msR-1T-soT" id="hZO-mq-0Pt"/>
                         <segue destination="b10-RI-9e3" kind="unwind" identifier="backToFavorite" unwindAction="backToFavoriteWithSegue:" id="tr0-DI-kjf"/>

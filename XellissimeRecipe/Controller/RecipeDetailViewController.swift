@@ -25,7 +25,10 @@ class RecipeDetailViewController: UIViewController {
     var star = false
     // MARK: - Outlets - UILabel
     @IBOutlet weak var name: UILabel!
-    @IBOutlet weak var recipeDescription: UILabel!
+  //  @IBOutlet weak var recipeDescription: UILabel!
+   
+    @IBOutlet weak var recipeDescription: UITextView!
+    
     @IBOutlet weak var durationLabel: UILabel!
     // MARK: - Outlets - UIImageView
     @IBOutlet weak var recipePicture: UIImageView!

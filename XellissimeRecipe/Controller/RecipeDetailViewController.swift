@@ -113,7 +113,12 @@ class RecipeDetailViewController: UIViewController {
         // recipePicture.adjustsImageSizeForAccessibilityContentSizeCategory = true
         
         recipePicture.translatesAutoresizingMaskIntoConstraints = false
-        let width = UIScreen.main.bounds.width/8
+        var width = CGFloat()
+        if UIScreen.main.bounds.width > 400 {
+             width = UIScreen.main.bounds.width/8
+        } else {
+                width = UIScreen.main.bounds.width/4
+        }
         print("la largeur est de \(width)")
         //recipePicture.widthAnchor.constraint(equalToConstant: width).isActive = true
         // recipePicture.heightAnchor.constraint(equalToConstant: width).isActive = true

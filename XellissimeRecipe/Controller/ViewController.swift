@@ -10,11 +10,11 @@
 import UIKit
 import Alamofire
 
-
-
-
+// MARK: - Class RecipeDetailViewController
+/**
+ This class displays the main recipe research screen
+ */
 class ViewController: UIViewController {
-    
     // MARK: - Outlets - Label
     @IBOutlet weak var introLabel: UILabel!
     // MARK: - Outlets - TextField and TextView
@@ -25,9 +25,9 @@ class ViewController: UIViewController {
     @IBOutlet weak var clearButton: UIButton!
     @IBOutlet weak var searchButton: UIButton!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
-    
+    // MARK: - Properties
+    /// Array that stores all ingredients that must be in the recipe for research
     var listOfIngredientsArray = [String]()
- //   var testListRecipe = [MyRecipe]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,7 +36,6 @@ class ViewController: UIViewController {
         listOfIngredientsTextView.isEditable = false
     }
     // MARK: - Actions
-    
     @IBAction func addButtonIsPressed(_ sender: UIButton) {
         addAction()
     }
@@ -85,15 +84,21 @@ class ViewController: UIViewController {
     private func addAction(){
         guard var ingredient = ingredientsTextField.text else {return}
         ingredient.removeFirstAndLastAndDoubleWhitespace()
-        if ingredient == "" {
+        guard ingredient != "" else {
             Alert.shared.controller = self
             Alert.shared.alertDisplay = .noIngredientToAdd
             self.toggleActivityIndicator(shown: false)
-        } else {
-            listOfIngredientsArray.append(ingredient)
-            let newLine = "- \(ingredient.capitalized)"
-            listOfIngredientsTextView.text += "\n\t\(newLine)"
+            return
         }
+        guard !listOfIngredientsArray.contains(ingredient) else {
+            Alert.shared.controller = self
+            Alert.shared.alertDisplay = .ingredientAlreadyInList
+            ingredientsTextField.text = ""
+            return
+        }
+        listOfIngredientsArray.append(ingredient)
+        let newLine = "- \(ingredient.capitalized)"
+        listOfIngredientsTextView.text += "\n\t\(newLine)"
         ingredientsTextField.text = ""
         print(listOfIngredientsArray)
     }
@@ -126,7 +131,6 @@ class ViewController: UIViewController {
         gestureswipeCreation()
         manageTextField()
         clearButton.setTitle(" Clear ", for: .normal)
-        
         let wid = clearButton.intrinsicContentSize.width
         clearButton.widthAnchor.constraint(equalToConstant: wid).isActive = true
         AddButton.widthAnchor.constraint(equalToConstant: wid).isActive = true

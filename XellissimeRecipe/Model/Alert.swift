@@ -28,7 +28,7 @@ class Alert {
     // MARK: - Enum
     /// Enum that lists all cases of alert presentations
     enum AlertCase {
-        case emptyListOfIngredient, noIngredientToAdd, requestCrash, noRecipe, noFavorites, recipeDetailsUrlError
+        case emptyListOfIngredient, noIngredientToAdd, requestCrash, noRecipe, noFavorites, recipeDetailsUrlError, ingredientAlreadyInList
     }
     // MARK: -
     init() {}
@@ -62,7 +62,11 @@ class Alert {
         case .recipeDetailsUrlError: controller?.presentAlertDetails(
             title: "Sorry",
             message: "Web site not found",
-            titleButton: "OK")       
+            titleButton: "OK")
+        case .ingredientAlreadyInList: controller?.presentAlertDetails(
+            title: "Sorry",
+            message: "Ingredient is already in the list",
+            titleButton: "OK")
         }
     }
 }

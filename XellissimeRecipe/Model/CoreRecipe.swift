@@ -34,8 +34,6 @@ class CoreRecipe: NSManagedObject {
         savedRecipe.ingredient = recipe.ingredient
         savedRecipe.cookingTime = Int16(recipe.cookingTime)
         try? AppDelegate.viewContext.save()
-        print("le recette a été enregistrée en favori")
-        print("le nombre de favoris est de \(CoreRecipe.all.count)")
     }
     /**
      This function enables to delete a recipe from CoreData
@@ -45,8 +43,6 @@ class CoreRecipe: NSManagedObject {
         if !CoreRecipe.all.isEmpty {
             AppDelegate.viewContext.delete(coreRecipe)
             try? AppDelegate.viewContext.save()
-            print("le recette a été supprimée des favoris")
-            print("le nombre de favoris est de \(CoreRecipe.all.count)")
         }
     }
     /**
@@ -56,7 +52,6 @@ class CoreRecipe: NSManagedObject {
     static func checkIfRecipeIsAlreadyInFavorite(recipe: MyRecipe) -> Bool {
         let name = recipe.name
         let url = recipe.urlRecipeDetail
-        print(name)
         var counter = 0
         for recipe in CoreRecipe.all where recipe.name == name && recipe.urlRecipeDetails == url {
             counter += 1
@@ -67,7 +62,10 @@ class CoreRecipe: NSManagedObject {
             return false
         }
     }
-    
+    /**
+     This function enables to delete a recipe from CoreData
+     - Parameter coreRecipe: the recipe to delete
+     */
     static func removeACoreRecipeFromMyRecipe(recipe: MyRecipe) {
         let name = recipe.name
         let url = recipe.urlRecipeDetail

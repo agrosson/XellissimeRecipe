@@ -7,7 +7,11 @@
 //
 
 import UIKit
-
+// MARK: - Class FavoriteTableViewCell
+/**
+ This class defines the characteristics of the cell
+ 
+ */
 class FavoriteTableViewCell: UITableViewCell {
     @IBOutlet weak var recipeImage: UIImageView!
     @IBOutlet weak var recipeName: UILabel!
@@ -21,7 +25,13 @@ class FavoriteTableViewCell: UITableViewCell {
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     }
-    
+    /**
+     This function enables the configuration of the cell
+     - Parameter withImage: the url as a string of the image
+     - Parameter name: the title of the recipe
+     - Parameter time: the cooking time of the recipe
+     - Parameter ingredients: the list as an array of ingredients of the recipe
+     */
     func configure(withImage: String, name: String, time: Int, ingredients: [String]) {
         var imageToGet : UIImage?
         guard let url = URL(string: withImage ) else {return}

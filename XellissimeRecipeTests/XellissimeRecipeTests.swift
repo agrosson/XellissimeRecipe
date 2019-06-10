@@ -114,7 +114,6 @@ class XellissimeRecipeTests: XCTestCase {
         recipeToBeLast.urlRecipeDetail = "\(uuidURl)"
         CoreRecipe.saveToFavorite(recipe: recipeToBeLast)
         let numberFavoriteBefore = CoreRecipe.all.count
-        print(numberFavoriteBefore)
         guard let itemToCheck = CoreRecipe.all.last else {return}
         guard let name = itemToCheck.name else {return}
         guard let url = itemToCheck.urlRecipeDetails else {return}

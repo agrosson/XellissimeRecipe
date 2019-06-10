@@ -71,9 +71,7 @@ class RecipeDetailViewController: UIViewController {
                 return
             }
             if CoreRecipe.checkIfRecipeIsAlreadyInFavorite(recipe: recipe) == true {
-                print("attention doublon")
             } else {
-                print("Nickel pas de doublon")
                 CoreRecipe.saveToFavorite(recipe: recipe)
                 performSegue(withIdentifier: "backToFavorite", sender: self)
             }

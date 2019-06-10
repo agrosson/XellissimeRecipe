@@ -54,7 +54,6 @@ class ViewController: UIViewController {
             NetworkingClient.shared.search(with: url){ (success, returnlistOfRecipes) in
                 self.toggleActivityIndicator(shown: false)
                 if returnlistOfRecipes != nil {
-                    print("on est là avec \(listOfRecipes.count) recettes")
                     guard listOfRecipes.count != 0 else {
                         Alert.shared.controller = self
                         Alert.shared.alertDisplay = .noRecipe
@@ -100,7 +99,6 @@ class ViewController: UIViewController {
         let newLine = "- \(ingredient.capitalized)"
         listOfIngredientsTextView.text += "\n\t\(newLine)"
         ingredientsTextField.text = ""
-        print(listOfIngredientsArray)
     }
     /**
      Function that manages TextField

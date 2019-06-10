@@ -17,7 +17,6 @@ class FavoriteTableViewCell: UITableViewCell {
     @IBOutlet weak var recipeName: UILabel!
     @IBOutlet weak var recipeCookingTime: UILabel!
     @IBOutlet weak var recipeIngredient: UILabel!
-     
     override func awakeFromNib() {
         super.awakeFromNib()
     }

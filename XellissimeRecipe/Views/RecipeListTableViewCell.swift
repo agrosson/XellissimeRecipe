@@ -18,7 +18,6 @@ class RecipeListTableViewCell: UITableViewCell {
     @IBOutlet weak var nameRecipe: UILabel!
     @IBOutlet weak var timeRecipe: UILabel!
     @IBOutlet weak var ingredientsRecipe: UILabel!
-    
     override func awakeFromNib() {
         super.awakeFromNib()
     }

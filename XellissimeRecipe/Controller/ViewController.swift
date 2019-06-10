@@ -28,7 +28,7 @@ class ViewController: UIViewController {
     // MARK: - Properties
     /// Array that stores all ingredients that must be in the recipe for research
     var listOfIngredientsArray = [String]()
-    
+    // MARK: - Methods - viewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
         activityIndicator.isHidden = true

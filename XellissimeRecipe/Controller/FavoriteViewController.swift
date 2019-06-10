@@ -65,7 +65,7 @@ extension FavoriteViewController: UITableViewDataSource {
         return 1
     }
     /**
-     Function that indicates number of of rows in section in tableView
+     Function that indicates number of rows in section in tableView
      */
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return CoreRecipe.all.count

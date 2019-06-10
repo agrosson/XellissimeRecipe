@@ -53,6 +53,8 @@ class XellissimeRecipeTests: XCTestCase {
         // Then favorite number increases of 1 item
         let numberAfter = CoreRecipe.all.count
         XCTAssertEqual(numberAfter, numberBefore+1)
+        guard let coreLast = CoreRecipe.all.last else {return}
+        CoreRecipe.removeFromFavorite(coreRecipe: coreLast)
     }
     
     // Test if Duplicate favorite in database
@@ -67,6 +69,8 @@ class XellissimeRecipeTests: XCTestCase {
         recipe2.urlRecipeDetail = "urlTest"
         let test = CoreRecipe.checkIfRecipeIsAlreadyInFavorite(recipe: recipe2)
         XCTAssertTrue(test)
+        guard let coreLast = CoreRecipe.all.last else {return}
+        CoreRecipe.removeFromFavorite(coreRecipe: coreLast)
     }
     
     // Test if Duplicate favorite in database
@@ -92,6 +96,8 @@ class XellissimeRecipeTests: XCTestCase {
         // the testIsTrue
         let test = CoreRecipe.checkIfRecipeIsAlreadyInFavorite(recipe: recipe)
         XCTAssertFalse(test)
+        guard let coreLast = CoreRecipe.all.last else {return}
+        CoreRecipe.removeFromFavorite(coreRecipe: coreLast)
     }
     
     // test function remove
@@ -122,7 +128,8 @@ class XellissimeRecipeTests: XCTestCase {
         CoreRecipe.removeACoreRecipeFromMyRecipe(recipe: itemMyRecipe)
         let numberAfter = CoreRecipe.all.count
         XCTAssertEqual(numberAfter, numberFavoriteBefore-1)
-        
+        guard let coreLast = CoreRecipe.all.last else {return}
+        CoreRecipe.removeFromFavorite(coreRecipe: coreLast)
     }
 }
 

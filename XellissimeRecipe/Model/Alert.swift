@@ -28,7 +28,7 @@ class Alert {
     // MARK: - Enum
     /// Enum that lists all cases of alert presentations
     enum AlertCase {
-        case emptyListOfIngredient, noIngredientToAdd, requestCrash, noRecipe, noFavorites
+        case emptyListOfIngredient, noIngredientToAdd, requestCrash, noRecipe, noFavorites, recipeDetailsUrlError
     }
     // MARK: -
     init() {}
@@ -59,6 +59,10 @@ class Alert {
             title: "Sorry",
             message: "No Favorites.\nYou can search and add recipes by clicking on forks",
             titleButton: "OK")
+        case .recipeDetailsUrlError: controller?.presentAlertDetails(
+            title: "Sorry",
+            message: "Web site not found",
+            titleButton: "OK")       
         }
     }
 }

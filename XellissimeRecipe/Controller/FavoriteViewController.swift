@@ -22,22 +22,21 @@ class FavoriteViewController: UIViewController {
     // MARK: - ViewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("Bienvenu sur la liste des favoris. Le nombre de favoris est de \(CoreRecipe.all.count)")
         testIfEmptyFavorite()
         updateView()
     }
     // MARK: - ViewWillAppear
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        print("Bienvenu sur la liste des favoris. Le nombre de favoris est de \(CoreRecipe.all.count)")
         testIfEmptyFavorite()
         updateView()
     }
     // MARK: - Methods
+    /**
+     Function that displays an alert when there is no favorite's recipe
+     */
     private func testIfEmptyFavorite(){
         if CoreRecipe.all.count == 0 {
-//            Alert.shared.controller = self
-//            Alert.shared.alertDisplay = .noFavorites
             let actionSheet = UIAlertController(title: "Sorry", message: "No favorites\nClick on forks\nto add favorites", preferredStyle: .alert)
             actionSheet.addAction(UIAlertAction(title: "Go Search", style: .cancel, handler: { (action: UIAlertAction) in
                   self.performSegue(withIdentifier: "backToMenu", sender: self)
@@ -49,8 +48,6 @@ class FavoriteViewController: UIViewController {
      Function that updates views and reloads data for tableView
      */
     fileprivate func updateView() {
-        //tableView.estimatedRowHeight = tableView.rowHeight
-        //tableView.rowHeight = UITableView.automaticDimension
         tableView.reloadData()
     }
     /**
@@ -102,10 +99,15 @@ extension FavoriteViewController: UITableViewDelegate {
             performSegue(withIdentifier: "favoriteDetail", sender: self)
         }
     }
-    
+    /**
+     Function that indicates if a cell can be edited
+     */
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         return true
     }
+    /**
+     Function that deletes a cell (row) by swiping (trailing)
+     */
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
              let recipe = CoreRecipe.all[indexPath.row]
@@ -116,14 +118,15 @@ extension FavoriteViewController: UITableViewDelegate {
             testIfEmptyFavorite()
         }
     }
-    
+    /**
+     Function that shares a recipe by swiping (leading)
+     */
     func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         let shareRecipe = UIContextualAction(style: .normal, title: "Share") { (action, view, nil) in
             let recipe = CoreRecipe.all[indexPath.row]
             guard let recipeUrl = recipe.urlRecipeDetails else {return}
             let activityController = UIActivityViewController(activityItems: ["Hi, I wanted to share with you this fantastic recipe :\(recipeUrl)\nEnjoy !!"], applicationActivities: nil)
             self.present(activityController, animated: true, completion:{
-                print("share is done !! ")
             })
         }
         return UISwipeActionsConfiguration(actions: [shareRecipe])
